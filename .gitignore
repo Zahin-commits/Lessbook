@@ -1,0 +1,9 @@
+# gitignore 
+
+#ignore all the node_modules folder is child repos 
+
+*/node_modules
+
+# ignore the .env files 
+
+*/.env
