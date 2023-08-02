@@ -7,3 +7,9 @@
 # ignore the .env files 
 
 */.env
+
+# ignore unnecessary dir
+
+./frontend
+./"frontend - redux"
+./"redux-querry"

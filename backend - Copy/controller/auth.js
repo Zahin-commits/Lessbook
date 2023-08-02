@@ -45,12 +45,5 @@ exports.login = async(req,res,next)=>{
 
 const snedToken = (user,statusCode,res)=>{
  const token = user.getSignedJwtToken();
- res.cookie('jwt', token, {
-  httpOnly: true,
-  secure: false, // Use secure cookies in production
-  sameSite: 'strict', // Prevent CSRF attacks
-  maxAge: 10 * 24 * 60 * 60 * 1000, // 30 days
-});
-  /* res.status(statusCode).json({sucess:true, token}); */
-  res.status(statusCode).json({sucess:true, userInfo:user});
+  res.status(statusCode).json({sucess:true, token});
 }

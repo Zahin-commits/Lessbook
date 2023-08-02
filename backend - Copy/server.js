@@ -10,21 +10,16 @@ const commentRouter = require('./router/comment');
 const connectDB = require('./config/db');
 const { protect } = require('./middleware/auth');
 const cors = require('cors');
-const cookieParser = require('cookie-parser');
 
 connectDB();
 
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
-
 
 app.use(cors({
     credentials: true,
     origin:"http://localhost:5173"
 }
 ));
-
-app.use(cookieParser());
 
 app.get('/',(req,res)=>{    
  return res.json('the server is online');
