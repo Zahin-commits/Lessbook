@@ -1,0 +1,30 @@
+#topBar{
+ background-color: white;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ position: static;
+ width: 100vw;
+ padding: 5px 10px;
+}
+
+#topBar a{
+ text-decoration: none;
+ margin-inline: 10px;
+}
+
+.topBarRight{
+ display: flex;
+}
+
+.topBarLeft{
+ display: flex;
+ align-items: center;
+}
+
+.topBarLeft .userPic{
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ object-fit: cover;
+}

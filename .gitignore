@@ -13,3 +13,5 @@
 ./frontend
 ./"frontend - redux"
 ./"redux-querry"
+./"old-stuff"
+*/"backend-Copy"

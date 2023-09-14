@@ -1,8 +1,12 @@
 import React from 'react'
-import {Hero} from '../components/Hero'
+import { TopBar } from '../components/TopBar'
+import { Feed } from '../components/feed/Feed'
 
 export const HomeScreen = () => {
   return (
-    <Hero/>
+    <>
+    <TopBar/>
+    <Feed/>
+    </>
   )
 }
