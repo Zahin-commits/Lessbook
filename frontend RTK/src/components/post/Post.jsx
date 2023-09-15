@@ -11,7 +11,7 @@ export const Post = ({post}) => {
     const fetchUser = async () => {
       const res = await axios.get(`http://localhost:3000/user/${post.userId}`,{withCredentials: true});
       setAuthorInfo(res.data.user);
-      console.log(res.data.user)
+    //  console.log(res.data.user)
     };
     fetchUser();
   }, [post.userId]);
@@ -37,18 +37,29 @@ export const Post = ({post}) => {
     <div className="post-info">
 
        <img src={aothorInfo.profilePic || 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png'} alt="" className="prfile-pic" />
+       
        <div className='author'>
          <p className='author-name'>{aothorInfo?.username} </p>   
      
        <span className="createAt">{post.createdAt}</span> 
         </div> 
     </div>
-
- <p className='post-text'>
+ 
+  <div className="post_content">
+  <p className='post-text'>
   {post.desc}
  </p>
-     
-    <img src={post.img} alt="" />    
+  {post.video &&<video controls id='post_video'>
+     <source src={post.video} type="video/mp4"/>
+    </video>}
+
+   {post.img && <img src={post.img} alt="" /> }  
+       
+  </div>
+  <div className="post_engagement">
+    <div className="like">likes:{post.likes.length}</div> 
+    <div className="comment">comment: null</div>
+  </div>
     </div>
   )
 }

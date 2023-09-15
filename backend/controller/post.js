@@ -2,7 +2,7 @@ const Post = require("../model/Post");
 
 
 exports.createPost = async(req,res)=>{
- const {desc ,img} = req.body; 
+ const {desc,img,video} = req.body; 
  const user = req.user;
  if(!user){
   return res.status(404).json({sucess:false, message:"user id not found"});
@@ -16,7 +16,8 @@ exports.createPost = async(req,res)=>{
   const post = await Post.create({
    userId:user._id,
    desc,
-   img
+   img,
+   video
   });
 
   res.status(201).json({sucess:true, post});

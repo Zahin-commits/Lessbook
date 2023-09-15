@@ -34,3 +34,15 @@
  opacity: 0.7;
  font-size: 14px;
 }
+
+.post_content{
+ display: flex;
+ flex-direction: column;
+}
+
+#post_video{
+ max-height: 80vh;
+ max-width: 100%;
+ align-self: center;
+ margin: auto;
+}

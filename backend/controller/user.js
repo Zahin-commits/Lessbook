@@ -30,3 +30,34 @@ exports.findUserById = async(req,res)=>{
     res.status(500).json({sucess:false, message:error.message});
  }
 }
+
+// follow and unfollow an user
+
+exports.followUser = async(req,res)=>{
+   if(!req.user._id || !req.params.id){
+      return res.status(400).json({sucess:false,message:"you need to provide the id of yours and the useryou want to follow"});
+   } 
+  if(req.user._id === req.params.id){
+   return res.status(400).json({sucess:false,message:"you can not follow yourself"});
+  }
+try {
+   const currentUser = await User.findById(req.user._id);
+   if(!currentUser) res.status(404).json({sucess:false,message:"currentUser not fund"});
+   const user = await User.findById(req.params.id);
+   if(!user) res.status(404).json({sucess:false,message:"user not fund"});
+   
+   if(!user.followers.includes(req.user._id)){
+      await user.updateOne({ $push: { followers: req.user._id } });
+      await currentUser.updateOne({ $push: { followings: req.params.id } });
+    return res.status(200).json({sucess:true,message:`user ${user.username} has been followed`});
+   }else{
+      await user.updateOne({ $pull: { followers: req.body.userId } });
+      await currentUser.updateOne({ $pull: { followings: req.params.id } });
+      return res.status(200).json({sucess:true,message:`user ${user.username} has been unfollowed`});
+   }
+
+} catch (error) {
+   res.status(500).json({sucess:false,message:error.message});
+} 
+
+}

@@ -1,5 +1,5 @@
 const express = require('express');
-const { findAllUser, findOneUser, findUserById } = require('../controller/user');
+const { findAllUser, findOneUser, findUserById, followUser } = require('../controller/user');
 const router = express.Router();
 
 //get all users
@@ -12,7 +12,7 @@ router.route('/profile').get(findOneUser);
 router.route('/:id').get(findUserById);
 
 //follow or unfollow a user 
-router.route('/:id/follow').put();
+router.route('/:id/follow').put(followUser);
 
 
 module.exports = router;

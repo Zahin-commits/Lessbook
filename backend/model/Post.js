@@ -13,6 +13,9 @@ const PostSchema = new schema({
  img:{
  type:String
  },
+ video:{
+ type:String
+ },
  likes:{
  type:Array,
  default:[]
