@@ -8,7 +8,7 @@ const PostSchema = new schema({
  },
  desc:{
  type:String,
- max:150
+ max:450
  },
  img:{
  type:String

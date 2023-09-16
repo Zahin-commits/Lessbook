@@ -1,15 +1,16 @@
 import './feed.css';
 import React, { useEffect, useState } from 'react'
-import { useGetAllPostQuery, useGetPostsDataMutation } from '../../features/user/userApiSlice'
+import { useGetAllPostByUserIdQuery, useGetAllPostQuery} from '../../features/user/userApiSlice'
 import { Post } from '../post/Post';
 import PostMaker from '../postMaker/PostMaker';
 
 
-export const Feed = () => {
+export const Feed = ({userId}) => {
 
 const [posts,setPosts] = useState([]);
+
 //const [getPostsData,{isLoading}] = useGetPostsDataMutation();
- const {isLoading,data} = useGetAllPostQuery("");
+ const {isLoading,data} = userId? useGetAllPostByUserIdQuery(userId) : useGetAllPostQuery("");
 
 console.log(data)
 useEffect(() => {

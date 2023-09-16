@@ -9,6 +9,11 @@ export const userApiSlice =  apiSlice.injectEndpoints({
               query: () => ( { url: `/post`, credentials: "include" }) ,
               providesTags: ['Post'],
           }) ,
+         getAllPostByUserId: builder.query({
+             // query: () => '/post',
+              query: (userId) => ( { url: `/post?userId=${userId}`, credentials: "include" }) ,
+              providesTags: ['Post'],
+          }) ,
 
         getPostsData: builder.mutation({
             query: () => ({
@@ -71,4 +76,4 @@ export const userApiSlice =  apiSlice.injectEndpoints({
     })
 })
 
-export const {useGetAllPostQuery,useGetAuthorInfoMutation,useGetAuthorDataQuery,useGetUserDataQuery, useCreatePostMutation, useRegisterMutation, useLoginMutation ,useGetPostsDataMutation} = userApiSlice;
+export const {useGetAllPostQuery,useGetAllPostByUserIdQuery,useGetAuthorInfoMutation,useGetAuthorDataQuery,useGetUserDataQuery, useCreatePostMutation, useRegisterMutation, useLoginMutation ,useGetPostsDataMutation} = userApiSlice;

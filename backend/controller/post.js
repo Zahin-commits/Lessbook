@@ -27,9 +27,14 @@ exports.createPost = async(req,res)=>{
 };
 
 exports.getAllPost = async(req,res)=>{
+   const {userId} = req.query; 
   try {
-    const post = await Post.find().sort('-createdAt');
-
+    let post;
+    if(userId){
+      post = await Post.find({userId}).sort('-createdAt');
+    }else{
+     post = await Post.find().sort('-createdAt');
+ }
     res.json({sucess:true, post});
   } catch (error) {
     res.status(500).json({sucess:false, message:error.message});

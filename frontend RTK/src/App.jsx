@@ -5,6 +5,7 @@ import Login from './components/Login';
 import {ProtectedRoute} from './components/ProtectedRoute'
 import Test from './components/Test';
 import { HomeScreen } from './screens/HomeScreen';
+import { Profile } from './components/Profile';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path='' element={<ProtectedRoute/>}>
           <Route path='/' index={true} element={<HomeScreen/>}/>
+          <Route path='/profile/:id' element={<Profile/>}/>
           </Route>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>

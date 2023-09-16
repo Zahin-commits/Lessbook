@@ -1,8 +1,8 @@
 import axios from 'axios';
-import {useParams} from 'react-router-dom';
 import './post.css';
 import { useGetAuthorDataQuery, useGetAuthorInfoMutation } from '../../features/user/userApiSlice';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Post = ({post}) => {
   //const {username} = useParams()
@@ -36,12 +36,12 @@ export const Post = ({post}) => {
     <div className='post'>
     <div className="post-info">
 
-       <img src={aothorInfo.profilePic || 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png'} alt="" className="prfile-pic" />
+      <Link to={`profile/${post.userId}`}> <img src={aothorInfo.profilePic || 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png'} alt="" className="prfile-pic" /></Link>
        
        <div className='author'>
-         <p className='author-name'>{aothorInfo?.username} </p>   
+        <Link  to={`profile/${post.userId}`}><p className='author-name'>{aothorInfo?.username} </p></Link> 
      
-       <span className="createAt">{post.createdAt}</span> 
+       <span className="createAt">{new Date(post.createdAt).toLocaleDateString()}</span> 
         </div> 
     </div>
  

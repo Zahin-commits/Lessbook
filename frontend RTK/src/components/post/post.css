@@ -10,6 +10,12 @@
  width: 100%;
 }
 
+.author a{
+ color: #333;
+ text-transform: capitalize;
+ text-decoration: none;
+}
+
 .post-info{
  padding: 8px;
  display: flex;
