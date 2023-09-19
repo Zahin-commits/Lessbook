@@ -1,0 +1,153 @@
+#story_container{
+ width: 60vw;
+ margin: 20px auto 10px auto;
+ display: flex;
+ overflow-x: scroll;
+}
+
+#story_maker{
+ width: 155px;
+ height: 270px;
+ background-color: #333;
+ border-radius: 15px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+}
+
+.add_story_btn{
+ height: 50px;
+ width: 50px;
+ color: white;
+ font-size: 26px;
+ font-weight: bolder;
+ text-align: center;
+ background-color: #297BE5;
+ padding: 10px;
+ border: none;
+ border-radius: 50%;
+}
+
+#story_maker p{
+ color: white;
+ font-size: 17px;
+ font-weight: bold;
+ margin: 10px;
+}
+
+.story{
+ width: 155px;
+ height: 270px;
+ margin-inline: 5px;
+ background-color: white;
+ border-radius: 15px;
+ overflow: hidden;
+ position: relative;
+}
+
+.story_info{
+ height: 100%;
+ width: 100%;
+ position: absolute;
+ background-color: rgba(0, 0, 0, 0.363);
+ z-index: 2;
+}
+
+.story_info .user_pic{
+ width: 45px;
+ height: 45px;
+ margin: 10px;
+ border-radius: 50%;
+ border: 4px solid #297BE5;
+ object-fit: cover;
+}
+
+.story_info .user_name{
+ color: white;
+ font-weight: bold;
+ position: absolute;
+ bottom: 10px;
+ left: 10px;
+}
+
+.story .story_content{
+ position: relative;
+ display: flex;
+ height: 100%;
+ width: 100%;
+}
+
+.story .story_content img{
+ height: 270px;
+ object-fit: contain;
+ position: absolute;
+ left: 50%;
+ transform: translateX(-50%);
+}
+
+.story .story_content video{
+ max-width:100%;
+ max-height: 100%;
+ align-self: center;
+}
+
+.story_viewer{
+ width: 35vw;
+ height: 95vh;
+ padding: 10px;
+ color: white;
+ background-color: #131313ee;
+ border-radius: 20px;
+ display: flex;
+ flex-direction: column;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ backdrop-filter: blur(4px);
+ z-index: 5;
+}
+
+.hide_story{
+ color: white;
+ padding: 5px 10px;
+ background-color: transparent;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-200px,-280px) scale(3);
+ border: none;
+ z-index: 7;
+}
+
+.story_viewer .user_info{
+ display: flex;
+ align-items: center;
+ justify-content: flex-end;
+}
+
+.story_viewer .user_info img{
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ margin-inline: 10px;
+ object-fit: cover;
+}
+
+.story_viewer .story_content{
+ height: calc(100% - 65px);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.story_viewer .story_content img{
+ max-width: calc(100% - 15px);
+}
+.story_viewer .story_content video{
+ max-height: 100%;
+ max-width: 100%;
+ padding: 5px;
+}

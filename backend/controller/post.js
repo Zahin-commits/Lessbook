@@ -115,9 +115,9 @@ exports.likePost = async(req,res)=>{
       res.json({sucess:true,message:"you disliked the post"})
   }else{
     await post.updateOne({ $push: { likes: userId } });
-    res.json({sucess:true,message:"you liked the post"})
+    res.json({sucess:true,liked:true,message:"you liked the post"})
   }
  } catch (error) {
-  res.status(500).json({sucess:false, message:error.message});
+  res.status(500).json({sucess:false,liked:false, message:error.message});
  }
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {useDispatch,useSelector} from 'react-redux';
 import { useRegisterMutation } from '../features/user/userApiSlice';
-import { setCredentials } from '../features/user/authSlice';
+import { setCredentials } from '../app/authSlice';
 
 export default function Register() {
   const [username,setUsername] = useState('');

@@ -7,6 +7,7 @@ const userRouter = require('./router/user');
 const privateRouter = require('./router/private');
 const postRouter = require('./router/post');
 const commentRouter = require('./router/comment');
+const storyRouter = require('./router/story')
 const connectDB = require('./config/db');
 const { protect } = require('./middleware/auth');
 const cors = require('cors');
@@ -37,6 +38,7 @@ app.use(protect);
 app.use('/user',userRouter);
 app.use('/post',postRouter);
 app.use('/comment',commentRouter);
+app.use('/story',storyRouter);
 
 app.listen(PORT,()=>{
  console.log(`the server is listening at ${PORT}`);

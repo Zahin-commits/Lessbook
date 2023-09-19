@@ -51,7 +51,7 @@ try {
       await currentUser.updateOne({ $push: { followings: req.params.id } });
     return res.status(200).json({sucess:true,message:`user ${user.username} has been followed`});
    }else{
-      await user.updateOne({ $pull: { followers: req.body.userId } });
+      await user.updateOne({ $pull: { followers: req.user._id } });
       await currentUser.updateOne({ $pull: { followings: req.params.id } });
       return res.status(200).json({sucess:true,message:`user ${user.username} has been unfollowed`});
    }

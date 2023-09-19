@@ -54,6 +54,38 @@ export const userApiSlice =  apiSlice.injectEndpoints({
               }),
         }),
 
+        followUser: builder.mutation({
+            query: (userId) => ({
+                url: `/user/${userId}/follow`,
+                method:'PUT',
+                credentials:"include"
+              }),
+        }),
+
+        likePost: builder.mutation({
+            query: (postId) => ({
+                url: `/post/${postId}/like`,
+                method:'PUT',
+                credentials:"include"
+              }),
+        }),
+
+        createStory: builder.mutation({
+            query:(data)=>({
+             url: '/story',
+             method:"POST",
+             body:data,
+             credentials:"include"
+            }),
+            invalidatesTags:["Post"]
+        }),
+
+        getAllStory: builder.query({
+            // query: () => '/post',
+             query: () => ( { url: `/story`, credentials: "include" }) ,
+             providesTags: ['Post'],
+         }) ,
+
         register:builder.mutation({
             query:(data)=>({
                 url: `/auth/register`,
@@ -76,4 +108,10 @@ export const userApiSlice =  apiSlice.injectEndpoints({
     })
 })
 
-export const {useGetAllPostQuery,useGetAllPostByUserIdQuery,useGetAuthorInfoMutation,useGetAuthorDataQuery,useGetUserDataQuery, useCreatePostMutation, useRegisterMutation, useLoginMutation ,useGetPostsDataMutation} = userApiSlice;
+export const {useGetAllPostQuery,useGetAllPostByUserIdQuery,
+    useGetPostsDataMutation,useGetAuthorInfoMutation,
+    useGetAuthorDataQuery,useGetUserDataQuery,
+    useCreatePostMutation, useFollowUserMutation,
+    useLikePostMutation, useCreateStoryMutation,
+    useGetAllStoryQuery,
+    useRegisterMutation,useLoginMutation} = userApiSlice;

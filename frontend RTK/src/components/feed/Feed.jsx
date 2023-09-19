@@ -23,8 +23,8 @@ useEffect(() => {
 
  return(
     <div id='feed'>
+   {!userId &&<PostMaker/>}
    
-   <PostMaker/>
 
     {isLoading && <h1>Loading... </h1>}
       

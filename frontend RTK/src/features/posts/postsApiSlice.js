@@ -4,14 +4,12 @@ import { PostsQuerySlice } from "./postsQuerySlice";
 export const postsApiSlice =  PostsQuerySlice.injectEndpoints({
     endpoints: (builder)=>({
         
-        getPostsData: builder.mutation({
-            query: () => ({
-                url: '/post',
-                method: 'GET',
-                credentials:"include"
-              }),
-        })    
+        getAllPost2: builder.query({
+            // query: () => '/post',
+             query: () => ( { url: `/post`, credentials: "include" }) ,
+             providesTags: ['Test'],
+         }) ,   
     })
 })
 
-export const {useGetPostsDataMutation} = postsApiSlice;
+export const {useGetAllPost2Query} = postsApiSlice;

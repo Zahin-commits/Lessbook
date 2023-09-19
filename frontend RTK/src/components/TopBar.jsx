@@ -1,10 +1,18 @@
 import './topbar.css'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useState } from 'react'
+import { logout } from '../app/authSlice'
 
 export const TopBar = () => {
-
+    const [showDropdown,setShowDropdown] = useState(false);
     const {userInfo} = useSelector(state=>state.auth)
+
+    const dispatch = useDispatch();
+
+    const handleLogout=()=>{
+        dispatch(logout());
+    }
   return (
     <div id='topBar'>
         <div className='topBarRight'>
@@ -15,13 +23,16 @@ export const TopBar = () => {
             <Link to={'/'}>Home</Link>
             <Link to={'/'}>Followings</Link>
         </div>
-        <div className='topBarLeft'>
-            <Link to={'/'}>
+        <div className='topBarLeft' onClick={()=>setShowDropdown(!showDropdown)}>
+            
                 <img className='userPic' src={userInfo.profilePic} alt="" />
-            </Link>
-            <Link to={'/'}>
+            
             <p className='username'>{userInfo.username}</p>
-            </Link>
+           
+           {showDropdown && <div className='dropdown'>
+            settings
+            <button onClick={handleLogout}>logout</button>
+            </div>}
         </div>
     </div>
   )

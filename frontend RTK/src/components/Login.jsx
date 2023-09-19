@@ -1,7 +1,7 @@
 import { useState , useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {useDispatch,useSelector} from 'react-redux';
-import { setCredentials } from '../features/user/authSlice';
+import { setCredentials } from '../app/authSlice';
 import { useLoginMutation } from '../features/user/userApiSlice';
 
 export default function Login() {
