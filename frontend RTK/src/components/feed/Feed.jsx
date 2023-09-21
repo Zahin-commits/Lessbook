@@ -12,7 +12,7 @@ const [posts,setPosts] = useState([]);
 //const [getPostsData,{isLoading}] = useGetPostsDataMutation();
  const {isLoading,data} = userId? useGetAllPostByUserIdQuery(userId) : useGetAllPostQuery("");
 
-console.log(data)
+//console.log(data)
 useEffect(() => {
 /* (async()=>{
   const res = await getPostsData().unwrap();

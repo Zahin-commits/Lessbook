@@ -49,11 +49,11 @@ try {
    if(!user.followers.includes(req.user._id)){
       await user.updateOne({ $push: { followers: req.user._id } });
       await currentUser.updateOne({ $push: { followings: req.params.id } });
-    return res.status(200).json({sucess:true,message:`user ${user.username} has been followed`});
+    return res.status(200).json({sucess:true,isFollowing:true,message:`user ${user.username} has been followed`});
    }else{
       await user.updateOne({ $pull: { followers: req.user._id } });
       await currentUser.updateOne({ $pull: { followings: req.params.id } });
-      return res.status(200).json({sucess:true,message:`user ${user.username} has been unfollowed`});
+      return res.status(200).json({sucess:true,isFollowing:false,message:`user ${user.username} has been unfollowed`});
    }
 
 } catch (error) {

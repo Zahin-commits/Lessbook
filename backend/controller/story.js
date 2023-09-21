@@ -37,8 +37,8 @@ exports.getFollowingStories =async(req,res)=>{
  const userStory = await Story.findOne({userId});  
  const followingsStories = await Story.find({userId:{$in:followings}});
  
- const stories = [userStory,...followingsStories]
- console.log(stories);
+ const stories = userStory? [userStory,...followingsStories] : [...followingsStories];
+ //console.log(stories);
     res.status(201).json({sucess:true,stories});
 } catch (error) {
     res.status(500).json({sucess:false, message:error.message});

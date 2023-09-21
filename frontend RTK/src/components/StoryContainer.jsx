@@ -15,9 +15,10 @@ const {data,isLoading} = useGetAllStoryQuery();
       
       <StoryMaker/>
 
-      {!isLoading && data?.stories?.map((story)=>(
-        <Story story={story}/>
-      ))}
+      {!isLoading && data?.stories?.[0] ? data?.stories?.map((story)=>(
+        
+         <Story story={story}/> 
+      )): 'no story avalable'}
 
 {/*         <div className='story'>
       <div className="story_info">

@@ -1,13 +1,13 @@
 const User = require("../model/User");
 
 exports.register = async(req,res,next)=>{
- const {username, email, password} = req.body;
+ const {username, email, password,profilePic} = req.body;
  if(!username || !email || !password){
  return res.status(401).json("please provide a valid username, email and password");
  };
 
  try {
-  const user = await User.create({username,email,password});
+  const user = await User.create({username,profilePic,email,password});
 
   snedToken(user,201,res);
     

@@ -102,3 +102,30 @@
   padding: 15px 10px;
   margin-block: 25px;
  }
+
+ .choose_profilePic{
+  position: relative;
+ }
+
+ .choose_profilePic img{
+  height: 300px;
+  width: 300px;
+  margin-top: 80px;
+  border-radius: 50%;
+  border: 3px solid #1877F2;
+  object-fit: cover;
+ }
+
+ .choose_profilePic .add_profile{
+  height: 35px;
+  width: 35px;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 50%;
+  position: absolute;
+  top: 88%;
+  left: 72%;
+  background-color: #42B72A;
+ }

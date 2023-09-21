@@ -22,7 +22,7 @@ const [showStory,setShowStory] = useState(false);
     <div className='story' onClick={()=>setShowStory(!showStory)}>
       <div className="story_info">
         <img className='user_pic' src={authorInfo.profilePic || 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png'} alt="profile pic" />
-        <p className='user_name'>{authorInfo.username}</p>
+        <p className='user_name'>{authorInfo.username || 'loading...'}</p>
       </div>
       <div className="story_content">
         {story.videoUrl && <video controls>
