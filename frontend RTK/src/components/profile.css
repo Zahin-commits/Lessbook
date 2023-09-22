@@ -3,8 +3,9 @@
 }
 
 .profile_avatar{
- width: 300px;
- height: 300px;
+ width: 250px;
+ height: 250px;
+ border: 5px solid #F0F2F5;
  border-radius: 50%;
  object-fit: cover;
 }
@@ -13,10 +14,52 @@
 width: 100vw;
 height: 50vh;
 background-repeat: no-repeat;
-background-size: contain;
+background-size: cover;
 background-position: center;
 }
 
-h2{
+#profile .username{
+ text-transform: capitalize;
  margin: 10px;
+}
+
+#profile .profile_theme{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ 
+}
+
+#profile .profile_info{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ transform: translate(0%,-40%);
+}
+
+#profile .follow_info{
+ text-transform: capitalize;
+ font-size: 18px;
+ display: flex;
+}
+
+#profile .follow_info>*{
+ opacity: 0.75;
+ margin-inline: 5px;
+}
+
+#profile .follow_btn{
+ transform: translate(0%,-110px);
+ text-transform: capitalize;
+ font-weight: bold;
+ color: white;
+ border: none;
+ background-color: #297BE5;
+ padding: 5px 10px;
+ border-radius: 5px;
+ font-size: 18px;
+}
+
+#profile .user_posts{
+transform: translate(0%,-90px);
 }

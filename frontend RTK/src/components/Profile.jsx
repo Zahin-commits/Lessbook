@@ -42,21 +42,26 @@ const followerHandler = ()=>{
 
  return (
     <div id='profile'>
-        {isLoading?<h1>Loading...</h1>: <div >
+        {isLoading?<h1>Loading...</h1>: <div className='profile_theme' >
          <div className="cover_pic" style={{backgroundImage: `url(${data?.user?.coverPicture})`}}></div>
-         <img className='profile_avatar' src={data?.user?.profilePic || 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png'} alt="" />
-         <h1> this is the profile of {data?.user?.username}</h1>
-         <h2>following: {data?.user?.followings.length}</h2>
-         <h2>followers: {isLoading? "loading...": followerCount || data?.user?.followers.length}</h2>
-        </div>}
+           <div className='profile_info'>
+            <img className='profile_avatar' src={data?.user?.profilePic || 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png'} alt="" />
+            <h2 className='username'>{data?.user?.username}</h2>
+            <div className='follow_info'>
+             <p>following: {data?.user?.followings.length}</p>
+             <p>followers: {isLoading? "loading...": followerCount || data?.user?.followers.length}</p>
+            </div>
+          </div>
         <button onClick={followerHandler} className='follow_btn'>
-         
           {isLoading || followUserIsloading ? 'loading...' :
-          data?.user?.followers.includes(userInfo._id) || isFollowing? 'Unfollow':'follow'}
-         
-          </button>
+          data?.user?.followers.includes(userInfo._id) || isFollowing? 'Unfollow':'follow'} 
+        </button>
+        </div>}
 
+        
+         <div className='user_posts'>
         <Feed userId={id}/>
+         </div>
     </div>
   )
 }

@@ -86,6 +86,15 @@ export const userApiSlice =  apiSlice.injectEndpoints({
              providesTags: ['Post'],
          }) ,
 
+         updateUser:builder.mutation({
+            query:(data)=>({
+                url: `/auth/update`,
+                body: data,
+                method: 'PUT',
+                credentials:"include"  
+            })
+        }),
+
         register:builder.mutation({
             query:(data)=>({
                 url: `/auth/register`,
@@ -113,5 +122,5 @@ export const {useGetAllPostQuery,useGetAllPostByUserIdQuery,
     useGetAuthorDataQuery,useGetUserDataQuery,
     useCreatePostMutation, useFollowUserMutation,
     useLikePostMutation, useCreateStoryMutation,
-    useGetAllStoryQuery,
+    useGetAllStoryQuery,useUpdateUserMutation,
     useRegisterMutation,useLoginMutation} = userApiSlice;

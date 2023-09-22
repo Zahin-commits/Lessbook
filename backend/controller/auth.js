@@ -43,6 +43,34 @@ exports.login = async(req,res,next)=>{
  }
 };
 
+
+exports.updateUser = async(req,res)=>{
+ const userId = req.user._id;
+ const {profilePic,coverPicture} = req.body;
+ if(!profilePic && !coverPicture){
+  return res.status(401).json({sucess:false, error:"invalid credentials"});
+ }
+ try {
+
+  const user = await User.findByIdAndUpdate(
+    userId,
+    { profilePic, coverPicture },
+    { new: true }
+  );
+  if(user){
+   /* const updatedUser = await user.updateOne({profilePic,coverPicture});
+   console.log(updatedUser); */
+   snedToken(user,202,res);
+  }else{
+    return res.status(404).json({sucess:false, error:"user not fund bruhh"});
+  }
+ } catch (error) {
+  res.status(500).json(error.message);
+ }
+
+}
+
+
 const snedToken = (user,statusCode,res)=>{
  const token = user.getSignedJwtToken();
  res.cookie('jwt', token, {

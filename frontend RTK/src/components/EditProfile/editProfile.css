@@ -1,3 +1,60 @@
-.edit_profile{
- background-color: azure;
+#edit_profile{
+ padding-inline: 3px;
+ width: 100vw;
+ height: 100vh;   
+ position: relative;
+ background-color: #F0F2F5;
+ overflow-x: hidden;
+}
+
+.section_1{
+ width: 100vw;
+}
+
+.section_1 .cover_pic{
+ width: calc(100vw - 10px);
+ object-fit: cover;
+}
+
+#edit_profile .section_2 {
+ position: absolute;
+ top: 55%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+ margin: auto;
+}
+
+#edit_profile .section_2 .profile_pic{
+ height: 200px;
+ width: 200px;
+ margin: auto;
+ border-radius: 50%;
+ object-fit: cover;
+ border: 5px solid #F0F2F5;
+}
+
+#edit_profile .section_2 .username{
+ font-size: 20px;
+ margin: 5px;
+ text-transform: capitalize;
+}
+
+#edit_profile .section_2 .followings,
+#edit_profile .section_2 .followers{
+ margin: 2px;
+ opacity: 0.75;
+}
+
+#edit_profile .edit_profile--feed{
+ position: absolute;
+}
+#edit_profile .update_profile--btn{
+ font-size: 18px;
+ font-weight: bold;
+ border: none;
+ text-transform: uppercase;
+ color: white;
+ padding: 5px 10px;
+ border-radius: 5px;
+ background-color: #42B72A;
 }

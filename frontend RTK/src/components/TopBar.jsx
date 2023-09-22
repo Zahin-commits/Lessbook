@@ -30,7 +30,7 @@ export const TopBar = () => {
             <p className='username'>{userInfo.username}</p>
            
            {showDropdown && <div className='dropdown'>
-            settings
+            <Link to={'/editProfile'}>edit profile</Link>
             <button onClick={handleLogout}>logout</button>
             </div>}
         </div>
