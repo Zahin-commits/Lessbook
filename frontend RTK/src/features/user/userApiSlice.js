@@ -54,6 +54,21 @@ export const userApiSlice =  apiSlice.injectEndpoints({
               }),
         }),
 
+        getCommnets: builder.query({
+             query: (postId) => ( { url: `/comment/${postId}`, credentials: "include" }) ,
+             providesTags: ['Post'],
+         }) ,
+
+         createComment: builder.mutation({
+            query:(data)=>({
+             url: `/comment/${data.postId}`,
+             method:"POST",
+             body:{text:data.text},
+             credentials:"include"
+            }),
+            invalidatesTags:["Post"]
+        }),
+
         followUser: builder.mutation({
             query: (userId) => ({
                 url: `/user/${userId}/follow`,
@@ -120,7 +135,8 @@ export const userApiSlice =  apiSlice.injectEndpoints({
 export const {useGetAllPostQuery,useGetAllPostByUserIdQuery,
     useGetPostsDataMutation,useGetAuthorInfoMutation,
     useGetAuthorDataQuery,useGetUserDataQuery,
-    useCreatePostMutation, useFollowUserMutation,
+    useCreatePostMutation, useGetCommnetsQuery,
+    useCreateCommentMutation,useFollowUserMutation,
     useLikePostMutation, useCreateStoryMutation,
     useGetAllStoryQuery,useUpdateUserMutation,
     useRegisterMutation,useLoginMutation} = userApiSlice;

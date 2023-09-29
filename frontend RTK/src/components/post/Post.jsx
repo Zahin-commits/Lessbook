@@ -4,6 +4,7 @@ import { useGetAuthorDataQuery, useGetAuthorInfoMutation, useLikePostMutation } 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { CommnetBox } from '../commentBox/CommnetBox';
 
 export const Post = ({post}) => {
   //const {username} = useParams()
@@ -11,6 +12,8 @@ export const Post = ({post}) => {
 
   const [aothorInfo,setAuthorInfo] = useState('');
   const [likeCount,setLikeCount] = useState(post.likes.length);
+  const [showComments,setShowComments] = useState(false); 
+
   const [likePost,{isLoading}] = useLikePostMutation();
 
   const likeHandler = ()=>{
@@ -75,7 +78,8 @@ export const Post = ({post}) => {
   </div>
   <div className="post_engagement">
     <div className="like" onClick={likeHandler}>likes:{isLoading? 'Loading...':likeCount}</div> 
-    <div className="comment">comment: null</div> 
+    <div className="comment-container" onClick={()=>setShowComments(!showComments)}>comment: null</div> 
+   {showComments && <CommnetBox postId={post._id}/>}  
   </div>
     </div>
   )
