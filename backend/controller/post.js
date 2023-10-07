@@ -8,8 +8,8 @@ exports.createPost = async(req,res)=>{
   return res.status(404).json({sucess:false, message:"user id not found"});
  } 
 
- if(!desc && !img){
- return res.status(401).json({sucess:false, message:"your post can not be empty"});
+ if(!desc && !img && !video){
+  return res.status(401).json({sucess:false, message:"your post can not be empty"});
  }
 
  try {

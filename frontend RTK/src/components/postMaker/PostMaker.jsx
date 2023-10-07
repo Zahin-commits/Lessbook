@@ -70,8 +70,8 @@ const fireMedia = ()=>{
   } 
  
   const uploadToDB =async(media)=>{
-    const imgUrl = media.type === 'image'? media.url : '';
-    const videoUrl = media.type === 'video'? media.url:'';
+    const imgUrl = media?.type === 'image'? media?.url : '';
+    const videoUrl = media?.type === 'video'? media?.url:'';
     const res = await createPost({
       desc:text,
       img: imgUrl || '',
@@ -84,8 +84,13 @@ const fireMedia = ()=>{
   const postHandler = async(e)=>{
    e.preventDefault();
 
-   if(!text) alert("You can't post empty shit here!");
-   fireMedia();
+   if(!text && !media) alert("You can't post empty shit here!");
+   if(media){
+    fireMedia();
+   }else if(!media && text){
+    uploadToDB(null);
+   }
+   
    console.log(text);
    console.log(userInfo);
   }
