@@ -36,9 +36,10 @@ export const userApiSlice =  apiSlice.injectEndpoints({
 
         getUserData: builder.query({
             query: (username) => ({
-                url: `/profile/username?=${username}`,
+                url: `user/profile/?username=${username}`,
                 credentials:"include"
               }),
+              providesTags: ['user'],
         }),
         getAuthorData: builder.query({
             query: (userId) => ({
@@ -56,7 +57,7 @@ export const userApiSlice =  apiSlice.injectEndpoints({
 
         getCommnets: builder.query({
              query: (postId) => ( { url: `/comment/${postId}`, credentials: "include" }) ,
-             providesTags: ['Post'],
+             providesTags: ['commnet'],
          }) ,
 
          createComment: builder.mutation({
@@ -66,7 +67,7 @@ export const userApiSlice =  apiSlice.injectEndpoints({
              body:{text:data.text},
              credentials:"include"
             }),
-            invalidatesTags:["Post"]
+            invalidatesTags:["commnet"]
         }),
 
         followUser: builder.mutation({
@@ -75,6 +76,7 @@ export const userApiSlice =  apiSlice.injectEndpoints({
                 method:'PUT',
                 credentials:"include"
               }),
+              invalidatesTags:['user']
         }),
 
         likePost: builder.mutation({
@@ -83,6 +85,7 @@ export const userApiSlice =  apiSlice.injectEndpoints({
                 method:'PUT',
                 credentials:"include"
               }),
+              invalidatesTags:["Post"]
         }),
 
         createStory: builder.mutation({
@@ -92,13 +95,13 @@ export const userApiSlice =  apiSlice.injectEndpoints({
              body:data,
              credentials:"include"
             }),
-            invalidatesTags:["Post"]
+            invalidatesTags:["story"]
         }),
 
         getAllStory: builder.query({
             // query: () => '/post',
              query: () => ( { url: `/story`, credentials: "include" }) ,
-             providesTags: ['Post'],
+             providesTags: ['story'],
          }) ,
 
          updateUser:builder.mutation({

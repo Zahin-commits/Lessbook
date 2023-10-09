@@ -31,7 +31,7 @@ export const Feed = ({userId}) => {
       ))} */}
    
       {!isLoading && data?.post?.map((item,index)=>(
-      <Post key={index} post={item} /> 
+      <Post key={index} post={item}/> 
       ))}
       
     </div>

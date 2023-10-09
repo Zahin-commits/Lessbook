@@ -17,7 +17,7 @@ export const Post = ({post}) => {
   const [likePost,{isLoading}] = useLikePostMutation();
 
   const likeHandler = ()=>{
-  const res = likePost(post._id).unwrap().then((data)=>{
+   likePost(post._id).unwrap().then((data)=>{
     if(data.sucess){
       let newLikeCount;
       if(data.liked){
@@ -28,6 +28,7 @@ export const Post = ({post}) => {
         setLikeCount(newLikeCount);
         console.log(data);
     }
+    console.log('like data ',data);
   })
 };
 
@@ -35,7 +36,7 @@ export const Post = ({post}) => {
     const fetchUser = async () => {
       const res = await axios.get(`http://localhost:3000/user/${post.userId}`,{withCredentials: true});
       setAuthorInfo(res.data.user);
-    //  console.log(res.data.user)
+   //   console.log(res.data.user)
     };
     fetchUser();
   }, [post.userId]);
@@ -77,7 +78,7 @@ export const Post = ({post}) => {
        
   </div>
   <div className="post_engagement">
-    <div className="like" onClick={likeHandler}>likes:{isLoading? 'Loading...':likeCount}</div> 
+    <button className="like" onClick={likeHandler} disabled={isLoading}>likes:</button> {isLoading? 'Loading...':post.likes.length}
     <div className="comment-container" onClick={()=>setShowComments(!showComments)}>comment: null</div> 
    {showComments && <CommnetBox postId={post._id}/>}  
   </div>

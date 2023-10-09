@@ -1,11 +1,13 @@
 #topBar{
+ position: sticky;
+ top: 0px;
+ width: 100vw;
  background-color: white;
  display: flex;
  justify-content: space-between;
  align-items: center;
- position: static;
- width: 100vw;
  padding: 5px 10px;
+ z-index: 4;
 }
 
 #topBar a{

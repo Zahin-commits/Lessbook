@@ -13,6 +13,7 @@ export const AddComment = ({postId}) => {
 
   createComment({postId,text}).unwrap().then(res=>{
     console.log(res);
+    setText('');
   });
   }
   return (

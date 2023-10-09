@@ -2,7 +2,7 @@ import './profile.css'
 import {useParams} from 'react-router-dom';
 import { useFollowUserMutation, useGetAuthorDataQuery } from '../features/user/userApiSlice';
 import { Feed } from './feed/Feed';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
 export const Profile = () => {

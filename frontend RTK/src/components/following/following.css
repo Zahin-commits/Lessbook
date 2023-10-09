@@ -1,0 +1,42 @@
+.following-wraper{
+ width: 100%;
+}
+
+.following{
+ width: 100%;
+ display: flex;
+ align-items: center;
+ margin-block: 10px;
+}
+
+.following img{
+ height: 50px;
+ width: 50px;
+ border-radius: 50%;
+ object-fit: cover;
+}
+
+.following a{
+ color: black;
+ text-decoration: none;
+}
+
+.following .name{
+ margin-inline: 5px;
+}
+
+.following .unfollow_btn{
+ margin-right: 5px;
+ margin-left: auto;
+ border: none;
+ outline: none;
+ color: white;
+ background-color: #42B72A;
+ padding: 10px 5px;
+ font-weight: bold;
+ border-radius: 5px;
+ text-transform: uppercase;
+}
+.following .unfollow_btn:hover{
+ background-color: #3aa126;
+}

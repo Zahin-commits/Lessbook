@@ -1,0 +1,11 @@
+#leftBar{
+position: fixed;
+top: 60px;
+left: 0px;
+width: 250px;
+height: 100vh;
+background-color: white;
+border: 1px solid #a1a1a1;
+padding: 10px;
+overflow-y: scroll;
+}
