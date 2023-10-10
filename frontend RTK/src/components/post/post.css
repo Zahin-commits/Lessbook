@@ -1,5 +1,5 @@
 .post{
- background-color: white;
+ background-color: var(--Secondary-color);
  margin-block: 10px;
  width: 100%;
  border-radius: 10px;
@@ -11,7 +11,7 @@
 }
 
 .author a{
- color: #333;
+ color: var(--input-color);
  text-transform: capitalize;
  text-decoration: none;
 }

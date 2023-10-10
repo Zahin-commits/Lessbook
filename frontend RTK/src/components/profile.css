@@ -43,6 +43,11 @@ background-position: center;
  display: flex;
 }
 
+#profile .follow_info > a{
+ color: #297BE5;
+ text-decoration: none;
+} 
+
 #profile .follow_info>*{
  opacity: 0.75;
  margin-inline: 5px;

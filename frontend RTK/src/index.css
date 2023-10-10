@@ -7,8 +7,37 @@
   font-family: sans-serif;
  }
  
+ :root{
+  --text-color: #333333;
+  --input-color: #000;
+  --active-color:#2580FF;
+  --primary-color:#F0F2F5;
+  --Secondary-color: #FFFFFF;
+  --btn-bg: #F0F2F5;
+  --primary-btn-color:#42B72A;
+  --btn-bg-hover: #ececec;
+  --icon-color: #707070;
+  --header-icon:#707070;
+  --post-option:gray;
+ }
+ 
+ [data-theme="dark"]{
+  --text-color:#e4e4e4;
+  --input-color: #ececec;
+  --active-color:#2374E1;
+  --primary-color:#18191A;
+  --Secondary-color: #242526;
+  --btn-bg: #3A3B3C;
+  --primary-btn-color:#42B72A;
+  --btn-bg-hover:#4E4F50;
+  --icon-color:#E7E9ED;
+  --header-icon:#bdbdbd;
+  --post-option:#cacaca;
+ }
+
  body{
-  background-color: #F0F2F5;
+  color: var(--text-color);
+  background-color: var(--primary-color);
  }
 
 .container{

@@ -7,7 +7,8 @@ import Test from './components/Test';
 import { HomeScreen } from './screens/HomeScreen';
 import { Profile } from './components/Profile';
 import { EditProfile } from './components/EditProfile/EditProfile';
-import { Connections } from './components/connections/Connections';
+import { ShowFollowings } from './components/showFollowngs/ShowFollowings';
+import { ShowFolloers } from './components/showFollowers/ShowFolloers';
 
 function App() {
 
@@ -18,8 +19,9 @@ function App() {
           <Route path='' element={<ProtectedRoute/>}>
           <Route path='/' index={true} element={<HomeScreen/>}/>
           <Route path='/profile/:id' element={<Profile/>}/>
+          <Route path='/profile/:id/followings' element={<ShowFollowings/>}/>
+          <Route path='/profile/:id/followers' element={<ShowFolloers/>}/>
           <Route path='/editProfile' element={<EditProfile/>}/>
-          <Route path='connections/:id' element={<Connections/>} />
           </Route>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>

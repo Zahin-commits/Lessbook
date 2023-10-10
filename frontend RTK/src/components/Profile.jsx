@@ -1,5 +1,5 @@
 import './profile.css'
-import {useParams} from 'react-router-dom';
+import {useParams,Link} from 'react-router-dom';
 import { useFollowUserMutation, useGetAuthorDataQuery } from '../features/user/userApiSlice';
 import { Feed } from './feed/Feed';
 import { useSelector } from 'react-redux';
@@ -48,8 +48,8 @@ const followerHandler = ()=>{
             <img className='profile_avatar' src={data?.user?.profilePic || 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png'} alt="" />
             <h2 className='username'>{data?.user?.username}</h2>
             <div className='follow_info'>
-             <p>following: {data?.user?.followings.length}</p>
-             <p>followers: {isLoading? "loading...": followerCount || data?.user?.followers.length}</p>
+            <Link to={`/profile/${data?.user?._id}/followings`}><p>following: {data?.user?.followings.length}</p></Link>
+            <Link to={`/profile/${data?.user?._id}/followers`}><p>followers: {isLoading? "loading...": followerCount || data?.user?.followers.length}</p></Link> 
             </div>
           </div>
         <button onClick={followerHandler} className='follow_btn'>
