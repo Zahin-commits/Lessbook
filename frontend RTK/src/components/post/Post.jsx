@@ -57,7 +57,7 @@ export const Post = ({post}) => {
     <div className='post'>
     <div className="post-info">
 
-      <Link to={`/profile/${post.userId}`}> <img src={aothorInfo.profilePic || 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png'} alt="" className="prfile-pic" /></Link>
+      <Link to={`/profile/${post.userId}`}> <img src={aothorInfo.profilePic || './unknown.jpg'} alt="" className="prfile-pic" /></Link>
        
        <div className='author'>
         <Link  to={`/profile/${post.userId}`}><p className='author-name'>{aothorInfo?.username} </p></Link> 

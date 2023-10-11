@@ -7,13 +7,12 @@ export const RightBar = ({username}) => {
  //  console.log('following data', data); 
   return (
     <div id='rightBar'>
-        <h2>followings</h2>
+        <h2>Followings</h2>
         {isLoading?'loading...':<div className='following-list'>
         {data?.user?.followings?.map(following=>(
-         <Following userId={following} currentUser={data?.user?._id}/>
+         <Following userId={following} currentUser={'rightBar'}/>
         ))}
     </div>}
-    
     </div>
   )
 }

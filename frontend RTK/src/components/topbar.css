@@ -1,12 +1,12 @@
 #topBar{
  position: sticky;
  top: 0px;
- width: 100vw;
+ width: calc(100vw - 6px);
  background-color: var(--Secondary-color);
  display: flex;
  justify-content: space-between;
  align-items: center;
- padding: 5px 10px;
+ padding: 5px 15px;
  z-index: 4;
 }
 

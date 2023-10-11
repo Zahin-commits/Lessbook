@@ -43,13 +43,13 @@ const followerHandler = ()=>{
  return (
     <div id='profile'>
         {isLoading?<h1>Loading...</h1>: <div className='profile_theme' >
-         <div className="cover_pic" style={{backgroundImage: `url(${data?.user?.coverPicture})`}}></div>
+         <div className="cover_pic" style={{backgroundImage: `url(${data?.user?.coverPicture || './banner.jpg'})`}}></div>
            <div className='profile_info'>
-            <img className='profile_avatar' src={data?.user?.profilePic || 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png'} alt="" />
+            <img className='profile_avatar' src={data?.user?.profilePic || './unknown.jpg'} alt="" />
             <h2 className='username'>{data?.user?.username}</h2>
             <div className='follow_info'>
-            <Link to={`/profile/${data?.user?._id}/followings`}><p>following: {data?.user?.followings.length}</p></Link>
             <Link to={`/profile/${data?.user?._id}/followers`}><p>followers: {isLoading? "loading...": followerCount || data?.user?.followers.length}</p></Link> 
+            <Link to={`/profile/${data?.user?._id}/followings`}><p>following: {data?.user?.followings.length}</p></Link>
             </div>
           </div>
         <button onClick={followerHandler} className='follow_btn'>

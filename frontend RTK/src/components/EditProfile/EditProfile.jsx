@@ -8,8 +8,8 @@ import {ref,uploadBytesResumable,getDownloadURL} from 'firebase/storage';
 import { v4 } from 'uuid';
 import { setCredentials } from '../../app/authSlice';
 
-const loaidngAvatar = 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png';
-const loadingCover = 'https://woodfordoil.com/wp-content/uploads/2018/02/placeholder.jpg';
+const loaidngAvatar = './unknown.jpg';
+const loadingCover = './coverPlaceholder.jpg';
 
 export const EditProfile = () => {
   const {userInfo} = useSelector(state=>state.auth);

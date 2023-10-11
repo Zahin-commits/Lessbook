@@ -24,7 +24,7 @@ const UserSchema = new schema({
  },
  profilePic:{
   type: String,
-  default:" https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png"
+  default:"https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png"
 },
 
  coverPicture: {

@@ -2,7 +2,7 @@
  width: 60vw;
  margin: 20px auto 10px auto;
  display: flex;
- overflow-x: scroll;
+ overflow-x: hidden;
 }
 
 #story_maker{

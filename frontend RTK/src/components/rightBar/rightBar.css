@@ -3,9 +3,11 @@
  top: 60px;
  right: 0px;
  width: 300px;
- height: 100vh;
+ height: calc(100vh - 10px);
+ margin-block: 5px;
  background-color: var(--Secondary-color);
- border: 1px solid #a1a1a1;
+ /* border: 1px solid #a1a1a1; */
+ border-radius: 5px;
  padding: 10px;
- overflow-y: scroll;
+ overflow-y: auto;
 }

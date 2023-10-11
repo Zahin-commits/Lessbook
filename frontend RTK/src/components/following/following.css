@@ -17,7 +17,7 @@
 }
 
 .following a{
- color: black;
+ color: var(--input-color);
  text-decoration: none;
 }
 

@@ -11,6 +11,7 @@
 }
 
 .cover_pic{
+background-color: var(--border-color);
 width: 100vw;
 height: 50vh;
 background-repeat: no-repeat;

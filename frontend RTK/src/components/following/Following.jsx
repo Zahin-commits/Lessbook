@@ -25,7 +25,9 @@ export const Following = ({userId,currentUser}) => {
              <p className='name' >{data?.user?.username}</p>
              </Link>
              {userInfo._id === userId?'':
-           <button className='unfollow_btn' onClick={handleFollowUser}>{followUserIsloading?"loading":currentUser?.followings?.includes(userId)?"unfollow":"follow"}</button>
+             <button className='unfollow_btn' onClick={handleFollowUser}>
+            {followUserIsloading?"loading":currentUser?.followings?.includes(userId) || currentUser==='rightBar'?"unfollow":"follow"}
+            </button>
          }
          </div>
         }
