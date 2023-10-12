@@ -1,13 +1,17 @@
 #topBar{
  position: sticky;
  top: 0px;
- width: calc(100vw - 6px);
+ width: 100vw;
  background-color: var(--Secondary-color);
  display: flex;
  justify-content: space-between;
  align-items: center;
  padding: 5px 15px;
  z-index: 4;
+}
+
+#topBar #nav_btn{
+ display: none;
 }
 
 #topBar a{
@@ -39,4 +43,16 @@
  margin: 5px;
  position: absolute;
  top: 50px;
+}
+
+@media (max-width:875px){
+    #topBar #nav_btn{
+     display: block;
+    }
+  }
+
+@media (max-width:550px) {
+ .topBarRight input{
+ display: none;
+ }
 }

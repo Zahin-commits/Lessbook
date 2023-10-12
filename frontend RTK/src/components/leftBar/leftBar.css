@@ -40,3 +40,9 @@ border-radius: 5px;
  border-radius: 50%;
  object-fit: cover;
 }
+
+@media (max-width:875px){
+    #leftBar{
+     display: none;
+    }
+  }

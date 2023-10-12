@@ -2,3 +2,23 @@
  width: 550px;
  margin: auto;
 }
+
+
+@media (max-width:1275px){
+    #feed{
+     margin-left: 30%;
+    }
+  }
+
+  @media (max-width:875px){
+  #feed{
+  margin-left: auto;
+  }
+  }
+
+  @media (max-width:550px){
+  #feed{
+  width: 100%;
+  margin-left: auto;
+  }
+  }

@@ -53,3 +53,19 @@
  margin: auto;
 }
 
+.post .post_engagement{
+ display: flex;
+ border-top: 2.5px solid var(--border-color);
+ align-items: center;
+ margin-top: 10px;
+ padding-block: 5px;
+}
+
+.post .post_engagement button{
+ background-color: transparent;
+ border: none;
+ outline: none;
+}
+.post .post_engagement > *{
+ margin-inline: 5px;
+}

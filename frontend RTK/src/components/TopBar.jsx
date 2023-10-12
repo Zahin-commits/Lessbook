@@ -1,9 +1,10 @@
-import './topbar.css'
-import { Link } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { useState } from 'react'
-import { logout } from '../app/authSlice'
-import useDarkTheme from '../useDarkTheme'
+import './topbar.css';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { logout } from '../app/authSlice';
+import useDarkTheme from '../useDarkTheme';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export const TopBar = () => {
     const [showDropdown,setShowDropdown] = useState(false);
@@ -18,7 +19,8 @@ export const TopBar = () => {
   return (
     <div id='topBar'>
         <div className='topBarRight'>
-            <div className="logo">Lessbook</div>
+            <div id='nav_btn'><MenuIcon/></div>
+            <div className="logo">L</div>
             <div className="searchContaner"><input type="text" /></div>
         </div>
         <div className='topBarCenter'>

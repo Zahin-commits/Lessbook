@@ -1,10 +1,12 @@
-import axios from 'axios';
 import './post.css';
+import axios from 'axios';
 import { useGetAuthorDataQuery, useGetAuthorInfoMutation, useLikePostMutation } from '../../features/user/userApiSlice';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { CommnetBox } from '../commentBox/CommnetBox';
+import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
+import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 
 export const Post = ({post}) => {
   //const {username} = useParams()
@@ -78,10 +80,12 @@ export const Post = ({post}) => {
        
   </div>
   <div className="post_engagement">
-    <button className="like" onClick={likeHandler} disabled={isLoading}>likes:</button> {isLoading? 'Loading...':post.likes.length}
-    <div className="comment-container" onClick={()=>setShowComments(!showComments)}>comment: null</div> 
-   {showComments && <CommnetBox postId={post._id}/>}  
+    <button className="like" onClick={likeHandler} disabled={isLoading}>
+     {post?.likes?.includes(userInfo._id)? <ThumbUpAltIcon style={{color:'#2580FF'}} /> : <ThumbUpAltIcon/>}
+      </button> {isLoading? 'Loading...':post?.likes?.length}
+    <div className="comment-container" onClick={()=>setShowComments(!showComments)}><ChatBubbleIcon/></div> 
   </div>
+   {showComments && <CommnetBox postId={post._id}/>}  
     </div>
   )
 }

@@ -8,6 +8,34 @@
  font-size: 20px;
 }
 
+#postMaker form{
+ display: flex;
+ flex-direction: column;
+}
+
+#postMaker .text_form{
+ display: flex;
+ align-items: center;
+ margin-bottom: 5px;
+ width: 100%;
+}
+
+#postMaker .text_form img{
+ height: 40px;
+ width: 40px;
+ border-radius: 50%;
+ object-fit: cover;
+ margin-left: 5px;
+}
+
+#postMaker .text_form input{
+ width: 100%;
+ margin: 10px;
+ font-size: 21px;
+ padding: 7px 10px;
+ border-radius: 15px;
+}
+
 #postMaker input{
  font-size: 20px;
  color: var(--text_color);
@@ -20,10 +48,34 @@
 }
 
 #mediaInput{
- color: #2E89FF;
- background-color: rgb(221, 221, 221);
+ color: #42B72A;
  padding: 5px;
  margin-inline: 5px;
  width: 200px;
  border-radius: 5px;
+}
+
+#postMaker button{
+ border: none;
+ outline: none;
+ color: #ddd;
+ background-color: #42B72A;
+ padding-block: 5px;
+ border-radius: 10px;
+}
+
+#postMaker button span{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 18px;
+ font-weight: bold;
+}
+
+#postMaker button span:hover{
+ color: #2580FF;
+}
+
+#postMaker button span > *{
+ margin-inline: 5px;
 }

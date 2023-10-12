@@ -11,3 +11,10 @@
  padding: 10px;
  overflow-y: auto;
 }
+
+
+@media (max-width:1275px){
+    #rightBar{
+     display: none;
+    }
+  }

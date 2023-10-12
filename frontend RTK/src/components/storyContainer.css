@@ -152,3 +152,30 @@
  max-width: 100%;
  padding: 5px;
 }
+
+
+@media (max-width:1275px){
+   #story_container{
+     margin-left: 300px;
+    }
+}
+
+@media (max-width:875px){
+ #story_container{
+    margin-left: auto;
+    width: 90%;
+ }
+}
+
+@media (max-width:550px) {
+   #story_maker,.story{
+      width: 132px;
+      height: 230px; 
+   }
+  }
+
+@media (max-width:500px){
+ #story_container{
+    width: 95%;
+ }
+}

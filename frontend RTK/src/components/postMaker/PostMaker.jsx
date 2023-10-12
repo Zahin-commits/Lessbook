@@ -5,6 +5,8 @@ import { useCreatePostMutation } from '../../features/user/userApiSlice';
 import {storage} from '../../firebase'; 
 import {ref,uploadBytesResumable,getDownloadURL} from 'firebase/storage';
 import {v4} from 'uuid';
+import SendIcon from '@mui/icons-material/Send';
+import ImageIcon from '@mui/icons-material/Image';
 
 export default function PostMaker() {
   const [text,setText] = useState('');
@@ -98,7 +100,10 @@ const fireMedia = ()=>{
   return (
     <div id='postMaker'>
        <form onSubmit={(e)=>postHandler(e)}>
-        <input onChange={(e)=>setText(e.target.value)} type="text" placeholder="what's is your mind" value={text}/>
+        <div className='text_form'>
+        <img src={userInfo.profilePic} alt="" width={40} />
+        <input onChange={(e)=>setText(e.target.value)} type="text" placeholder={`what's on your mind, ${userInfo.username}`} value={text}/>
+        </div>
         <input 
          hidden
          type="file" id="media"
@@ -106,9 +111,9 @@ const fireMedia = ()=>{
          onChange={(e)=>setMedia(e.target.files[0])} 
         />
        
-       <label htmlFor="media" id='mediaInput'>add media</label> {showProgress && `${progress}%`}
+       <label htmlFor="media" id='mediaInput'> <ImageIcon/> Picture/Video</label> {showProgress && `${progress}%`}
        
-       <button type="submit">{isLoading ? "Loading..." : "Post"}</button>
+       <button type="submit">{isLoading ? "Loading..." : <span>Post <SendIcon/></span>}</button>
        </form>
     </div>
   )
