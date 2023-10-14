@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import img1 from '../assets/kr$na2.jpg';
 import axios from 'axios';
 import { StoryViewer } from './StoryViewer';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 const profilePic = 'https://starsunfolded.com/wp-content/uploads/2023/06/Puneet-Superstar-image.jpg';
  
 export const Story = ({story}) => {
@@ -32,7 +33,8 @@ const [showStory,setShowStory] = useState(false);
       </div>
 
     </div>
-      {showStory && <> <button className='hide_story' onClick={()=>setShowStory(!showStory)}>←</button> <StoryViewer story={story} user={authorInfo}/></>}
+{/*     {showStory &&  <button className='hide_story' onClick={()=>setShowStory(!showStory)}><ArrowBackIosIcon/></button>} */}
+      {showStory && <StoryViewer story={story} user={authorInfo} showStory={showStory} setShowStory={setShowStory}/>}
       </>
   )
 }

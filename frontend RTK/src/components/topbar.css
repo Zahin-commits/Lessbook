@@ -19,11 +19,42 @@
  margin-inline: 10px;
 }
 
-.topBarRight{
- display: flex;
+.topBarRight .searchContaner{
+ background-color: var(--input-bg);
+ border-radius: 15px;
+ padding: 5px 10px;
+}
+
+.topBarRight .searchContaner .MuiSvgIcon-root{
+ font-size: 30px;
+}
+
+.topBarRight .searchContaner input{
+ border: none;
+ outline: none; 
+ font-size: 19px;
+ color: var(--text-color);
+ background-color: transparent;
+}
+
+.topBarCenter .MuiSvgIcon-root{
+  font-size: 35px;
+ }
+
+.topBarCenter a{
+ color: var(--icon-color);
+}
+
+.topBarCenter a:hover{
+ color: var(--active-color);
 }
 
 .topBarLeft{
+ display: flex;
+ align-items: center;
+}
+
+.topBarLeft .profile_info{
  display: flex;
  align-items: center;
 }
@@ -45,14 +76,49 @@
  top: 50px;
 }
 
+.topBarLeft #themeSwitch{
+ display: flex;
+ align-items: center;
+}
+
+@media (max-width:660px) {
+  .topBarRight input{
+    display: none;
+    }  
+}
+
 @media (max-width:875px){
     #topBar #nav_btn{
      display: block;
     }
+
+    .topBarCenter .MuiSvgIcon-root{
+      font-size: 30px;
+     }
+
+    .topBarRight .searchContaner input{
+     width: 200px;
+   }    
   }
 
 @media (max-width:550px) {
- .topBarRight input{
+ .topBarRight input, .topBarRight img{
  display: none;
  }
+
+ .topBarRight .searchContaner .MuiSvgIcon-root{
+   font-size: 25px;
+ }
+
+ .topBarRight .searchContaner{
+  padding: 5px;
+  padding-left: 6px;
+  border-radius: 50%;
+  margin-left: 5px;
+ }
+
+ .topBarLeft .userPic {
+  width: 40px;
+  height: 40px;
+}
 }

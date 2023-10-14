@@ -17,9 +17,9 @@ export const LeftBar = () => {
      </div>
       </Link>
      
-     <Link to={`/profile/${userInfo._id}/followers`}><SupervisorAccountIcon/> Followers</Link>
-     <Link to={'/feed'}> <EmailIcon/> posts</Link>
-     <Link to={'/editprofile'}> <SettingsIcon/> settings</Link> 
+     <Link to={`/profile/${userInfo._id}/followers`} className='vertical_align' ><SupervisorAccountIcon/> <span>Followers</span> </Link>
+     <Link to={'/feed'} className='vertical_align'> <EmailIcon/> <span>Posts</span> </Link>
+     <Link to={'/editprofile'} className='vertical_align'> <SettingsIcon/> <span>Settings</span> </Link> 
     </div>
   )
 }

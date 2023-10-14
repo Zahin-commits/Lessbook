@@ -55,6 +55,14 @@
  border-radius: 5px;
 }
 
+#PostMaker .extentions{
+ display: flex;
+} 
+
+#PostMaker .extentions span{
+ color: yellow;
+}
+
 #postMaker button{
  border: none;
  outline: none;

@@ -7,6 +7,7 @@ import {ref,uploadBytesResumable,getDownloadURL} from 'firebase/storage';
 import {v4} from 'uuid';
 import SendIcon from '@mui/icons-material/Send';
 import ImageIcon from '@mui/icons-material/Image';
+import TagFacesIcon from '@mui/icons-material/TagFaces';
 
 export default function PostMaker() {
   const [text,setText] = useState('');
@@ -110,9 +111,10 @@ const fireMedia = ()=>{
          accept='image/* , video/*'
          onChange={(e)=>setMedia(e.target.files[0])} 
         />
-       
-       <label htmlFor="media" id='mediaInput'> <ImageIcon/> Picture/Video</label> {showProgress && `${progress}%`}
-       
+       <div className="extentions">
+         <label htmlFor="media" id='mediaInput'> <ImageIcon/> Picture/Video</label> {showProgress && `${progress}%`}
+         <span> <TagFacesIcon/> Feelings/activity</span>
+      </div>
        <button type="submit">{isLoading ? "Loading..." : <span>Post <SendIcon/></span>}</button>
        </form>
     </div>

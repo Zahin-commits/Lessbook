@@ -5,10 +5,17 @@ import { useState } from 'react';
 import { logout } from '../app/authSlice';
 import useDarkTheme from '../useDarkTheme';
 import MenuIcon from '@mui/icons-material/Menu';
+import ThemeSwitch from './ThemeSwitch';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import GroupRoundedIcon from '@mui/icons-material/GroupRounded';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import useHamburger from '../useHamburger';
 
 export const TopBar = () => {
     const [showDropdown,setShowDropdown] = useState(false);
     const {userInfo} = useSelector(state=>state.auth)
+
+    const {toggleActive} = useHamburger('#leftBar');
 
     const dispatch = useDispatch();
     const {isThemeDark, toggleTheme} = useDarkTheme();
@@ -18,20 +25,26 @@ export const TopBar = () => {
     }
   return (
     <div id='topBar'>
-        <div className='topBarRight'>
-            <div id='nav_btn'><MenuIcon/></div>
-            <div className="logo">L</div>
-            <div className="searchContaner"><input type="text" /></div>
+        <div className='topBarRight vertical_align'>
+            <div id='nav_btn' onClick={toggleActive} ><MenuIcon/></div>
+            <div className="logo">
+              <img src="./logo.png" width={50} alt="" />
+            </div>
+            <div className="searchContaner vertical_align">
+              <SearchRoundedIcon/> 
+              <input type="text" /> </div>
         </div>
         <div className='topBarCenter'>
-            <Link to={'/'}>Home</Link>
-            <Link to={`/profile/${userInfo._id}/followers`}>Followers</Link>
+            <Link to={'/'}><HomeRoundedIcon/></Link>
+            <Link to={`/profile/${userInfo._id}/followers`}><GroupRoundedIcon/></Link>
         </div>
-        <div className='topBarLeft' onClick={()=>setShowDropdown(!showDropdown)}>
+        <div className='topBarLeft'>
+        <ThemeSwitch/>
+         <div className='profile_info' onClick={()=>setShowDropdown(!showDropdown)}>
+          <img className='userPic' src={userInfo.profilePic} alt="" />
+          <p className='username'>{userInfo.username}</p>
+         </div>
             
-                <img className='userPic' src={userInfo.profilePic} alt="" />
-            
-            <p className='username'>{userInfo.username}</p>
            
            {showDropdown && <div className='dropdown'>
             <Link to={'/editProfile'}>edit profile</Link>
