@@ -52,6 +52,12 @@ transition: left 500ms ease-in-out;
  margin: 5px;
 }
 
+@media (max-width:1275px) {
+  #leftBar{
+    width: 200px;
+  }
+}
+
 @media (max-width:875px){
     #leftBar{
      left: -100%;

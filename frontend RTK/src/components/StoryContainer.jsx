@@ -2,15 +2,18 @@ import './storyContainer.css';
 import { Story } from './Story';
 import { StoryMaker } from './StoryMaker';
 import { useGetAllStoryQuery } from '../features/user/userApiSlice';
-const profilePic = 'https://starsunfolded.com/wp-content/uploads/2023/06/Puneet-Superstar-image.jpg';
-
+import useScroll from '../useScroll';
+import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
+import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
  
 export const StoryContainer = () => {
+const {scrollLeft,scrollRight} = useScroll('#story_container');
 const {data,isLoading} = useGetAllStoryQuery();
 
  console.log('stories', data);
 
   return (
+    <div id="story_container_wraper">
     <div id='story_container'>
       
       <StoryMaker/>
@@ -45,6 +48,9 @@ const {data,isLoading} = useGetAllStoryQuery();
          {/* <img src={img1} alt="" /> 
       </div>
     </div> */}
+    </div>
+    <button className='scroll_btn right_btn' onClick={scrollRight}><ArrowForwardIosRoundedIcon/></button>
+    <button className='scroll_btn left_btn' onClick={scrollLeft} ><ArrowBackIosNewRoundedIcon/></button>
     </div>
   )
 }

@@ -23,7 +23,7 @@ export const userApiSlice =  apiSlice.injectEndpoints({
               }),
               providesTags: ['Post'],
         }),   
-        
+
         createPost: builder.mutation({
             query:(data)=>({
              url: '/post',
@@ -54,6 +54,15 @@ export const userApiSlice =  apiSlice.injectEndpoints({
                 credentials:"include"
               }),
         }),
+
+        searchUsers: builder.mutation({
+            query: (username) => ({
+                url: `/user/search?username=${username}`,
+                method: 'GET',
+                credentials:"include"
+              }),
+             
+        }),   
 
         getCommnets: builder.query({
              query: (postId) => ( { url: `/comment/${postId}`, credentials: "include" }) ,
@@ -138,7 +147,7 @@ export const userApiSlice =  apiSlice.injectEndpoints({
 export const {useGetAllPostQuery,useGetAllPostByUserIdQuery,
     useGetPostsDataMutation,useGetAuthorInfoMutation,
     useGetAuthorDataQuery,useGetUserDataQuery,
-    useCreatePostMutation, useGetCommnetsQuery,
+    useCreatePostMutation, useSearchUsersMutation, useGetCommnetsQuery,
     useCreateCommentMutation,useFollowUserMutation,
     useLikePostMutation, useCreateStoryMutation,
     useGetAllStoryQuery,useUpdateUserMutation,

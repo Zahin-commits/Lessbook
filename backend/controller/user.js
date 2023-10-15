@@ -31,6 +31,16 @@ exports.findUserById = async(req,res)=>{
  }
 }
 
+exports.findUsers = async(req,res)=>{
+ const username = req.query.username;
+ try {
+      const users = await User.find({ username: { $regex: username, $options: 'i' } });    
+      res.json({sucess:true,users});
+   } catch (error) {
+    res.status(500).json({sucess:false, message:error.message});
+ }
+}
+
 // follow and unfollow an user
 
 exports.followUser = async(req,res)=>{

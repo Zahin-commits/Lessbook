@@ -10,9 +10,11 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import GroupRoundedIcon from '@mui/icons-material/GroupRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import useHamburger from '../useHamburger';
+import { SearchUsers } from './SearchUsers/SearchUsers';
 
 export const TopBar = () => {
     const [showDropdown,setShowDropdown] = useState(false);
+    const [showSearch,setShowSearch] = useState(false);
     const {userInfo} = useSelector(state=>state.auth)
 
     const {toggleActive} = useHamburger('#leftBar');
@@ -30,9 +32,13 @@ export const TopBar = () => {
             <div className="logo">
               <img src="./logo.png" width={50} alt="" />
             </div>
-            <div className="searchContaner vertical_align">
-              <SearchRoundedIcon/> 
-              <input type="text" /> </div>
+            <div className="searchContaner vertical_align" >
+              <SearchRoundedIcon onClick={()=>setShowSearch(!showSearch)}/> 
+              <input className='psudoInput' type="text" placeholder='Sarch Lessboook' onClick={()=>setShowSearch(!showSearch)} />
+              { showSearch && <div className="searchDropDown">
+                 <SearchUsers setShowSearch={setShowSearch} showSearch={showSearch} />
+               </div>}
+              </div>
         </div>
         <div className='topBarCenter'>
             <Link to={'/'}><HomeRoundedIcon/></Link>
