@@ -75,3 +75,14 @@
 #Search_container a span{
  font-size: 14px;
 }
+
+@media (max-width:660px) {
+ #Search_container .search_bar{
+  display: flex;
+  border: 2px solid red;
+ }
+
+ #Search_container .search_bar input{
+  width: calc(100vw - 210px);
+ }
+}

@@ -112,8 +112,8 @@ const fireMedia = ()=>{
          onChange={(e)=>setMedia(e.target.files[0])} 
         />
        <div className="extentions">
-         <label htmlFor="media" id='mediaInput'> <ImageIcon/> Picture/Video</label> {showProgress && `${progress}%`}
-         <span> <TagFacesIcon/> Feelings/activity</span>
+         <label className='vertical_align' htmlFor="media" id='mediaInput'> <ImageIcon/> Picture/Video</label> {showProgress && `${progress}%`}
+         <span className='vertical_align' > <TagFacesIcon/> Feelings/activity</span>
       </div>
        <button type="submit">{isLoading ? "Loading..." : <span>Post <SendIcon/></span>}</button>
        </form>

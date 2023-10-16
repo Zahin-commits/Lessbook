@@ -9,6 +9,7 @@
  
  :root{
   --text-color: #333333;
+  --text-color2: #585858;
   --scrollbar-bg:#e9e9e9;
   --input-color: #000;
   --input-bg: #F0F2F5;
@@ -22,10 +23,12 @@
   --header-icon:#707070;
   --post-option:gray;
   --border-color:#ddd;
+  --like-color: #333333;
  }
  
  [data-theme="dark"]{
   --text-color:#e4e4e4;
+  --text-color2:#e4e4e4;
   --scrollbar-bg:#3A3B3C;
   --input-color: #ececec;
   --input-bg: #333333;
@@ -39,6 +42,7 @@
   --header-icon:#bdbdbd;
   --post-option:#cacaca;
   --border-color:#181818;
+  --like-color:#fff;
  }
 
  body{

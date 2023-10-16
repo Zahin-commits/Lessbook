@@ -47,23 +47,31 @@
  outline: none;
 }
 
-#mediaInput{
- color: #42B72A;
+#mediaInput {
+ color: var(--text-color2);
  padding: 5px;
  margin-inline: 5px;
  width: 200px;
  border-radius: 5px;
 }
-
-#PostMaker .extentions{
- display: flex;
-} 
-
-#PostMaker .extentions span{
- color: yellow;
+#mediaInput .MuiSvgIcon-root {
+ color: #42B72A;
 }
 
-#postMaker button{
+#postMaker .extentions{
+ display: flex;
+ justify-content: space-evenly;
+} 
+
+#postMaker .extentions span {
+ color: var(--text-color2);
+}
+
+#postMaker .extentions span .MuiSvgIcon-root{
+ color: #EAB026;
+}
+
+#postMaker button {
  border: none;
  outline: none;
  color: #ddd;

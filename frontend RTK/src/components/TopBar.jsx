@@ -9,6 +9,8 @@ import ThemeSwitch from './ThemeSwitch';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import GroupRoundedIcon from '@mui/icons-material/GroupRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import EditRoundedIcon from '@mui/icons-material/EditRounded';
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import useHamburger from '../useHamburger';
 import { SearchUsers } from './SearchUsers/SearchUsers';
 
@@ -53,9 +55,9 @@ export const TopBar = () => {
             
            
            {showDropdown && <div className='dropdown'>
-            <Link to={'/editProfile'}>edit profile</Link>
-            <button onClick={handleLogout}>logout</button>
-            <button onClick={toggleTheme}>{isThemeDark?'light mode':'dark mode'}</button>
+            <Link className='vertical_align' to={'/editProfile'}>edit profile <EditRoundedIcon/></Link>
+            <button className='vertical_align' onClick={handleLogout}>logout <LogoutRoundedIcon/></button>
+            {/* <button onClick={toggleTheme}>{isThemeDark?'light mode':'dark mode'}</button> */}
             </div>}
         </div>
     </div>

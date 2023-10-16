@@ -65,6 +65,7 @@
  background-color: transparent;
  border: none;
  outline: none;
+ color: var(--like-color);
 }
 .post .post_engagement > *{
  margin-inline: 5px;

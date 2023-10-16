@@ -67,13 +67,52 @@
 }
 
 .dropdown{
- background-color: white;
+ color: var(--text-color);
+ font-size: 18px;
+ font-weight: 700;
+ background-color: var(--primary-color);
  padding: 10px 5px;
- border: 1px solid grey;
  border-radius: 5px;
  margin: 5px;
  position: absolute;
  top: 50px;
+ right: 0px;
+ display: flex;
+ flex-direction: column;
+ width: 230px;
+ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.dropdown >*{
+  font-size: 18px;
+  font-weight: 700;
+  margin: 5px 10px;
+  padding-block: 5px;
+  color: white;  
+  border-radius: 5px;
+  justify-content: center;
+  text-transform: capitalize;
+}
+
+.dropdown >*> .MuiSvgIcon-root{
+ margin-left: 5px;
+}
+
+.dropdown a{
+ background-color: var(--active-color);
+}
+
+.dropdown a:hover{
+ background-color: #1167d6;
+}
+
+.dropdown button{
+ background-color: tomato;
+ border: none;
+}
+
+.dropdown button:hover{
+ background-color: rgb(255, 81, 51);
 }
 
 .topBarLeft #themeSwitch{
