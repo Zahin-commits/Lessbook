@@ -61,9 +61,11 @@ const fireMedia = ()=>{
           if(mediaType=='image'){
             // setImgurl(url);
              uploadToDB({type:'image',url});
+             setMedia(null);
           }else{
           // setVideoUrl(url);
            uploadToDB({type:'video',url});
+           setMedia(null);
           }
          
         });
@@ -87,7 +89,7 @@ const fireMedia = ()=>{
   const postHandler = async(e)=>{
    e.preventDefault();
 
-   if(!text && !media) alert("You can't post empty shit here!");
+   if(!text && !media) alert("You can't make an empty post!");
    if(media){
     fireMedia();
    }else if(!media && text){
@@ -98,6 +100,10 @@ const fireMedia = ()=>{
    console.log(userInfo);
   }
   
+
+  const feelings = ()=>{
+   alert('This fearture is construction :( [Tbh this is the only section of this site that dose not work yet.]')
+  }
   return (
     <div id='postMaker'>
        <form onSubmit={(e)=>postHandler(e)}>
@@ -112,10 +118,22 @@ const fireMedia = ()=>{
          onChange={(e)=>setMedia(e.target.files[0])} 
         />
        <div className="extentions">
-         <label className='vertical_align' htmlFor="media" id='mediaInput'> <ImageIcon/> Picture/Video</label> {showProgress && `${progress}%`}
-         <span className='vertical_align' > <TagFacesIcon/> Feelings/activity</span>
+         <label className='vertical_align' htmlFor="media" id='mediaInput'> <ImageIcon/> Picture/Video</label> 
+         
+         {showProgress && <div className='media_progress'>
+          <h4>Uploading Media</h4>
+            <p className='progress_int'>{progress}%</p>
+          <div className='progress_bar_container'>
+            <div className='progress_bar'  style={{width: `${progress}%`}}></div>
+          </div> 
+         </div>}
+         <span className='vertical_align' onClick={feelings} > <TagFacesIcon/> Feelings/activity</span>
       </div>
-       <button type="submit">{isLoading ? "Loading..." : <span>Post <SendIcon/></span>}</button>
+       <button type="submit" disabled={showProgress || isLoading}>
+        
+          {isLoading ? <span>Loading</span> : showProgress? <span>Uploading</span>:<span>Post <SendIcon/></span>}
+       
+        </button>
        </form>
     </div>
   )

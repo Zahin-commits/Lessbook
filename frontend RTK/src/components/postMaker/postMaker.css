@@ -95,3 +95,37 @@
 #postMaker button span > *{
  margin-inline: 5px;
 }
+
+.media_progress{
+ height: 115px;
+ width: 430px;
+ text-align: center;
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+ background-color: var(--Secondary-color);
+ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ z-index: 10;
+ padding: 10px;
+ border-radius: 10px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+}
+
+.media_progress h4 {
+ margin-bottom: 10px;
+}
+.media_progress .progress_bar_container{
+ height: 25px;
+ background-color: var(--primary-color);
+ border-radius: 5px;
+}
+
+.media_progress .progress_bar_container .progress_bar{
+ height: 100%;
+ /* background-color: var(--primary-btn-color); */
+ background-color: var(--active-color);
+ border-radius: 5px;
+}

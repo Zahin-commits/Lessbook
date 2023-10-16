@@ -1,4 +1,4 @@
-import './following.css'
+import './following.css';
 import { Link } from 'react-router-dom';
 import { useFollowUserMutation, useGetAuthorDataQuery } from '../../features/user/userApiSlice'
 import { useSelector } from 'react-redux';
@@ -16,7 +16,8 @@ export const Following = ({userId,currentUser}) => {
     }
     return (
     <div className='following-wraper'>
-        {isLoading?'loading...':
+        {isLoading?<span className='loader'></span>:
+        
          <div className='following' >
              <Link to={`/profile/${data?.user?._id}`}>
               <img src={data?.user?.profilePic} alt="profile pic" width={50}/>

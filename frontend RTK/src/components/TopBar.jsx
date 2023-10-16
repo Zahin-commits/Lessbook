@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { logout } from '../app/authSlice';
-import useDarkTheme from '../useDarkTheme';
 import MenuIcon from '@mui/icons-material/Menu';
 import ThemeSwitch from './ThemeSwitch';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
@@ -22,10 +21,12 @@ export const TopBar = () => {
     const {toggleActive} = useHamburger('#leftBar');
 
     const dispatch = useDispatch();
-    const {isThemeDark, toggleTheme} = useDarkTheme();
 
     const handleLogout=()=>{
-        dispatch(logout());
+     const isSure = confirm("Are you sure you want to logout?");
+     if (isSure) {
+      dispatch(logout());
+     }; 
     }
   return (
     <div id='topBar'>
