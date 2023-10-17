@@ -129,3 +129,9 @@
  background-color: var(--active-color);
  border-radius: 5px;
 }
+
+@media (max-width:550px) {
+ .media_progress{
+ width: 90vw;            
+}
+}

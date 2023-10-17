@@ -1,5 +1,5 @@
 import './searchUser.css';
-import React, { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {Link} from 'react-router-dom';
 import { useSearchUsersMutation } from '../../features/user/userApiSlice';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
@@ -16,13 +16,19 @@ export const SearchUsers = ({setShowSearch,showSearch}) => {
      setUsers(data?.users);
      setInput('');
     }
+
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+      inputRef.current.focus();
+    }, []);
   return (
     <div id='Search_container'>
      <div className="search_bar vertical_align">
         <button className='back_btn' onClick={()=>setShowSearch(!showSearch)}><ArrowBackRoundedIcon/></button>
         <div className=' input_container vertical_align'>
           <SearchRoundedIcon/>
-          <input type="text" placeholder='Search lessbook' onChange={(e)=>setInput(e.target.value)} value={input} />
+          <input type="text" ref={inputRef} placeholder='Search lessbook' onChange={(e)=>setInput(e.target.value)} value={input} />
         </div>
         <button className='search_btn' onClick={handleSearch}>Search</button>
      </div>

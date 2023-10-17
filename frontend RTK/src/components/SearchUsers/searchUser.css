@@ -64,6 +64,13 @@
     align-items: center;
 }
 
+#Search_container .search_result {
+ margin-top: 5px;
+ height: 430px;
+ color: var(--text-color);
+ overflow-y: auto;
+}
+
 #Search_container a {
  color: var(--text-color);
 }
@@ -79,7 +86,9 @@
 @media (max-width:660px) {
  #Search_container .search_bar{
   display: flex;
-  border: 2px solid red;
+ }
+ #Search_container .search_result{
+  height: calc(100vh - 75px);
  }
 
  #Search_container .search_bar input{

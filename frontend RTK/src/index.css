@@ -205,10 +205,16 @@
 
 /* loader animation */
 
+.loader_wraper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .loader {
   width: 48px;
   height: 48px;
-  border: 5px solid #FFF;
+  border: 5px solid #1877F2;
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;

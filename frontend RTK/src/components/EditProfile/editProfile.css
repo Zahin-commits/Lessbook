@@ -9,6 +9,53 @@
 
 .section_1{
  width: 100vw;
+ position: relative;
+}
+.edit_btn{
+ opacity: 0;
+ color: white;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+ background-color: rgba(0, 0, 0, 0.7);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ transition: all 0.3s ease;
+}
+
+.section_1 .edit_btn{
+    height: 100%;
+    width: 100%;
+}
+
+.section_1:hover .edit_btn {
+ opacity: 1;
+}
+
+.section_2:hover .edit_btn{
+ opacity: 1;
+}
+
+ .section_1 .edit_btn .btn_text{
+ font-size: 20px;
+}
+
+.section_1 .edit_btn .MuiSvgIcon-root{
+ font-size: 35px;
+} 
+ 
+.section_2 .edit_btn .MuiSvgIcon-root{
+ font-size: 30px;
+}
+.section_2 .edit_btn{
+    height: 190px;
+    width: 190px;
+    margin: auto;
+    border-radius: 50%;
+    top: 36%;
 }
 
 .section_1 .cover_pic{

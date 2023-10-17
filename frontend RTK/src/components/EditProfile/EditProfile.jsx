@@ -7,6 +7,7 @@ import { storage } from '../../firebase';
 import {ref,uploadBytesResumable,getDownloadURL} from 'firebase/storage';
 import { v4 } from 'uuid';
 import { setCredentials } from '../../app/authSlice';
+import EditRoundedIcon from '@mui/icons-material/EditRounded';
 
 const loaidngAvatar = './unknown.jpg';
 const loadingCover = './coverPlaceholder.jpg';
@@ -139,6 +140,10 @@ export const EditProfile = () => {
         <img src={ previewCoverPic || data?.user?.coverPicture || loadingCover}
           onClick={handleProfileCoverInput}
          alt="cover pic" className='cover_pic'/>
+         <div className='edit_btn edit_cover'>
+          <EditRoundedIcon/>
+          <p className='btn_text'>Change Cover</p>
+         </div>
         
         <input type="file" ref={profileCoverInputRef} accept='image/*'
         onChange={(e)=>chooseCoverPic(e)} hidden
@@ -148,6 +153,11 @@ export const EditProfile = () => {
       <div className='section_2'>
        <img src={ previewProfilePic || data?.user?.profilePic || loaidngAvatar}
         alt="profile pic" className='profile_pic' onClick={handleProfilePicInput} />
+
+        <div className='edit_btn .edit_profile'>
+          <EditRoundedIcon/>
+          <p className='btn_text'>Change Cover</p>
+         </div>
 
        <input type="file" ref={profilePicInputRef} accept='image/*'
         onChange={(e)=>chooseProfilePic(e)} hidden

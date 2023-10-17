@@ -62,7 +62,7 @@ export const Post = ({post}) => {
       <Link to={`/profile/${post.userId}`}> <img src={aothorInfo.profilePic || './unknown.jpg'} alt="" className="prfile-pic" /></Link>
        
        <div className='author'>
-        <Link  to={`/profile/${post.userId}`}><p className='author-name'>{aothorInfo?.username} </p></Link> 
+        <Link  to={`/profile/${post.userId}`}><p className='author-name'>{aothorInfo?.username || 'Loading'} </p></Link> 
      
        <span className="createAt">{new Date(post.createdAt).toLocaleDateString()}</span> 
         </div> 

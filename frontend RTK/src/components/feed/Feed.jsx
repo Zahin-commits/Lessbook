@@ -24,7 +24,7 @@ export const Feed = ({userId}) => {
    {!userId &&<PostMaker/>}
    
 
-    {isLoading && <h1>Loading... </h1>}
+    {isLoading && <span className='loader_wraper'><span className='loader'></span></span>}
       
       {/* {posts && posts?.post?.map((item,index)=>(
       <Post key={index} post={item} /> 

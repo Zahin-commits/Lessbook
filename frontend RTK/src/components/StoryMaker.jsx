@@ -23,21 +23,26 @@ export const StoryMaker = () => {
    };
 
    const uploadToDB =async(media)=>{
-    const imgUrl = media.type === 'image'? media.url : '';
+    try {
+     const imgUrl = media.type === 'image'? media.url : '';
     const videoUrl = media.type === 'video'? media.url:'';
     const res = await createStory({
       imgUrl: imgUrl || '',
       videoUrl: videoUrl || '',
-    });
-    console.log(res);
+     
+    });  
+  console.log(res);
+    } catch (error) {
+     alert('Something went wrong') 
+    }
   }
 
   const storyHandler = async(e)=>{
     e.preventDefault();
-    if(storyMedia === null) return ;
+    if(storyMedia === null) return alert("You can't make empty stories!");
 
     const mediaType = identifyType(storyMedia);
-    console.log(mediaType);
+   // console.log(mediaType);
     const meidaRef = ref(storage, `/story/${mediaType}/${storyMedia + v4()}`);
     const uploadTask = uploadBytesResumable(meidaRef,storyMedia);
      
@@ -53,11 +58,13 @@ export const StoryMaker = () => {
       },
       (error) => {
         console.log(error);
+        alert('Something went wrong, please try again.');
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-          console.log(url);
+       //   console.log(url);
            setShowProgress(false);
+           setStoryMedia(null);
           if(mediaType=='image'){
             // setImgurl(url);
              uploadToDB({type:'image',url});
@@ -81,11 +88,13 @@ export const StoryMaker = () => {
       onChange={(e)=>setStoryMedia(e.target.files[0])} 
       />
       <label htmlFor="story_input" className="add_story_btn">+</label>
-      { storyMedia && <div> 
-      <button className='upload_story_btn' onClick={(e)=>storyHandler(e)}>create</button>
-      <button className='cancel_story_btn' onClick={()=>setStoryMedia(null)}>cancel</button>
+      { storyMedia && <div className='story_upload'> 
+       {showProgress && <span>{progress}%</span>} 
+      <button className='upload_story_btn' onClick={(e)=>storyHandler(e)} disabled={isLoading || showProgress} >
+       {(showProgress||isLoading)?"Uploading":"Create"} </button>
+     { (!showProgress && !isLoading) && <button className='cancel_story_btn' onClick={()=>setStoryMedia(null)}>Cancel</button>}
       </div>}
-     <p>create story</p>
+    {(!isLoading && !showProgress) && <p>Create Story</p>} 
     </div>
   )
 }

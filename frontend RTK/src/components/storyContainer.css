@@ -56,6 +56,7 @@
 .add_story_btn{
  height: 50px;
  width: 50px;
+ margin-block: 5px;
  color: white;
  font-size: 26px;
  font-weight: bolder;
@@ -73,15 +74,54 @@
  margin: 10px;
 }
 
-.story{
+.story_upload{
+ text-align: center;
+ color: white;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.story_upload > *{
+ margin-block: 4px;
+}
+
+.story_upload button{
+ color: white;
+ border: none;
+ outline: none;
+ padding: 5px 10px;
+ border-radius: 5px;
+}
+
+.story_upload .upload_story_btn{
+ background-color: var(--active-color);
+}
+
+.story_upload .cancel_story_btn{
+ background-color: tomato;
+}
+
+.story , .empty_story{
  min-width: 155px;
  height: 270px;
  margin-inline: 5px;
- background-color: white;
  border-radius: 15px;
  overflow: hidden;
  position: relative;
  background-color: #333;
+}
+
+#story_container .empty_story{
+ color: #E4E4E4;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+}
+
+#story_container .empty_story .MuiSvgIcon-root{
+ font-size: 55px;
+ margin-bottom: 10px;
 }
 
 .story_info{
@@ -112,6 +152,7 @@
 .story .story_content{
  position: relative;
  display: flex;
+ align-items: center;
  height: 100%;
  width: 100%;
 }
@@ -225,7 +266,7 @@
    #story_container{
     overflow-x: scroll;
    }
-   #story_maker,.story{
+   #story_maker,.story,.empty_story{
       min-width: 132px;
       height: 210px; 
    }

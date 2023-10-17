@@ -30,9 +30,12 @@ export default function Login() {
       console.log(res);
       if(res.sucess){
         navigate('/');
+      }else if(res.sucess ==false){
+        alert(res.data.message);
       }
     } catch (error) {
       console.log(error);
+      alert(error.data.error);
     }
   }
 
