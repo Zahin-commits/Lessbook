@@ -57,6 +57,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
  }
  
  .container .section_2 form{
@@ -174,6 +175,46 @@
   top: 88%;
   left: 72%;
   background-color: #42B72A;
+ }
+
+
+ @media (max-width:750px) {
+.container{
+   flex-direction: column;
+   overflow-y: auto;
+  }
+  
+  #register.container{
+  justify-content: space-evenly;
+}
+
+#login.container{
+ justify-content:baseline;
+}
+  #register.container .choose_profilePic img{
+    height: 200px;
+    width: 200px;
+    margin-top: 0px;
+  }
+
+  #register .text_box {
+    display: none;
+  }
+  #login .text_box {
+    margin: 0px;
+    text-align: center;
+  }
+ }
+
+ @media (max-width:550px) {
+  #login .text_box h1{
+    font-size: 3.3rem;
+  }
+
+  #login .text_box p{
+    font-size: 23px;
+    margin-bottom: 35px;
+  }
  }
 
  ::-webkit-scrollbar {

@@ -2,15 +2,32 @@ import './feed.css';
 import { useGetAllPostByUserIdQuery, useGetAllPostQuery} from '../../features/user/userApiSlice'
 import { Post } from '../post/Post';
 import PostMaker from '../postMaker/PostMaker';
-
+import { useNavigate } from 'react-router-dom';
+import { logout } from '../../app/authSlice';
+import { useDispatch } from 'react-redux';
 
 export const Feed = ({userId}) => {
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
 //const [getPostsData,{isLoading}] = useGetPostsDataMutation();
- const {isLoading,data} = userId? useGetAllPostByUserIdQuery(userId) : useGetAllPostQuery("");
+ const {isLoading,data,error} = userId? useGetAllPostByUserIdQuery(userId) : useGetAllPostQuery("");
 
-//console.log(data)
+if(error){
+  console.log('error',error);
+  console.log('status',error.status);
+  if(error.status === 401){
+
+    console.log('unauthorized');
+    dispatch(logout());
+    navigate('/');
+  }else{
+   alert('Something went wrong.');
+  }
+}
+
+
+ //console.log(data)
 /*useEffect(() => {
  (async()=>{
   const res = await getPostsData().unwrap();

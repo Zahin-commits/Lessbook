@@ -8,11 +8,17 @@ export const userApiSlice =  apiSlice.injectEndpoints({
              // query: () => '/post',
               query: () => ( { url: `/post`, credentials: "include" }) ,
               providesTags: ['Post'],
+              onQueryError: (error) => {
+                console.error('An error occurred:', error);
+              },
           }) ,
          getAllPostByUserId: builder.query({
              // query: () => '/post',
               query: (userId) => ( { url: `/post?userId=${userId}`, credentials: "include" }) ,
               providesTags: ['Post'],
+              onQueryError: (error) => {
+                console.error('An error occurred:', error);
+              },
           }) ,
 
         getPostsData: builder.mutation({

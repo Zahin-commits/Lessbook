@@ -87,7 +87,12 @@ useEffect(() => {
     }
   } catch (error) {
     //console.log(error?.data?.message || error.error)
-    console.log(error)
+    console.log(error);
+    if(error.data.includes('dup key')){
+      alert('The username or email is already in use.');
+    }else{
+      alert('Something went wrong :(');
+    }
   } 
 }
 
@@ -109,7 +114,7 @@ const registerHandler = async(e)=>{
   } */
 };
 
-  return  <div className="container">
+  return  <div id='register' className="container">
   <div className="section_1">
 
     <div className="choose_profilePic">
