@@ -3,7 +3,7 @@
  width: 100vw;
  height: 100vh;   
  position: relative;
- background-color: #F0F2F5;
+ background-color: var(--primary-color);
  overflow-x: hidden;
 }
 
@@ -77,7 +77,7 @@
  margin: auto;
  border-radius: 50%;
  object-fit: cover;
- border: 5px solid #F0F2F5;
+ border: 5px solid var(--primary-color);
 }
 
 #edit_profile .section_2 .username{

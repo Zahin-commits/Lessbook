@@ -102,7 +102,7 @@ const fireMedia = ()=>{
   
 
   const feelings = ()=>{
-   alert('This fearture is construction :( [Tbh this is the only section of this site that dose not work yet.]')
+   alert('This fearture is construction :( [In fact this is the only section of this site that dose not work yet.]')
   }
   return (
     <div id='postMaker'>

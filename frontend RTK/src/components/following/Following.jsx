@@ -16,7 +16,7 @@ export const Following = ({userId,currentUser}) => {
     }
     return (
     <div className='following-wraper'>
-        {isLoading?<span className='loader'></span>:
+        {isLoading? <span className='loader_wraper'><span className='loader miniLoader'></span></span>:
         
          <div className='following' >
              <Link to={`/profile/${data?.user?._id}`}>

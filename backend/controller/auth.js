@@ -75,9 +75,9 @@ const snedToken = (user,statusCode,res)=>{
  const token = user.getSignedJwtToken();
  res.cookie('jwt', token, {
   httpOnly: true,
-  secure: false, // Use secure cookies in production
+  secure: false, // Use secure cookies in beta production
   sameSite: 'strict', // Prevent CSRF attacks
-  maxAge: 10 * 24 * 60 * 60 * 1000, // 30 days
+  maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
 });
   /* res.status(statusCode).json({sucess:true, token}); */
   res.status(statusCode).json({sucess:true, userInfo:user});
