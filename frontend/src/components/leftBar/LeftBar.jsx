@@ -1,4 +1,4 @@
-import './LeftBar.css';
+import './leftBar.css';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
