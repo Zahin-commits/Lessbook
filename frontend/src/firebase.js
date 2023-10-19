@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import {getStorage} from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDhdDFZ1eNqsB_NQa0tjOkN0AY9A41Se78",
-  authDomain: "lessbook-ffccf.firebaseapp.com",
-  projectId: "lessbook-ffccf",
+  apiKey: import.meta.env.apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
   storageBucket: "lessbook-ffccf.appspot.com",
-  messagingSenderId: "553474768982",
-  appId: "1:553474768982:web:28b37e0d45cfe22185bbf7"
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

@@ -118,7 +118,7 @@ const fireMedia = ()=>{
          onChange={(e)=>setMedia(e.target.files[0])} 
         />
        <div className="extentions">
-         <label className='vertical_align' htmlFor="media" id='mediaInput'> <ImageIcon/> Picture/Video</label> 
+         <label className='vertical_align' htmlFor="media" id='mediaInput'> <ImageIcon/>Picture/Video</label> 
          
          {showProgress && <div className='media_progress'>
           <h4>Uploading Media</h4>
