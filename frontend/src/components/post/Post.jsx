@@ -36,7 +36,7 @@ export const Post = ({post}) => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`http://localhost:3000/user/${post.userId}`,{withCredentials: true});
+      const res = await axios.get(`https://lessbook-api.onrender.com/user/${post.userId}`,{withCredentials: true});
       setAuthorInfo(res.data.user);
    //   console.log(res.data.user)
     };
