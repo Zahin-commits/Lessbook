@@ -74,7 +74,7 @@ exports.updateUser = async(req,res)=>{
 const snedToken = (user,statusCode,res)=>{
  const token = user.getSignedJwtToken();
  res.cookie('jwt', token, {
-  httpOnly: true,
+  httpOnly: false,// will make it true after fixing some bugs
   secure: false, // Use secure cookies in beta production
   sameSite: 'strict', // Prevent CSRF attacks
   maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
