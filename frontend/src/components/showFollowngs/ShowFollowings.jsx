@@ -16,7 +16,7 @@ export const ShowFollowings = () => {
     {isLoading?'loading...':<div id='showFollowings'>
     {data?.user?.followings?.length === 0 &&  <div className='empty_follow_list'>
         <PersonOffIcon/>
-        <p>{currentUser?.user?.username || "this user"} dose not follow anyone yet</p>
+        <p>{data?.user?.username || "this user"} dose not follow anyone yet</p>
         </div>}
 
         {data?.user?.followings?.map(following=>(
