@@ -182,3 +182,19 @@
   height: 40px;
 }
 }
+
+@media (max-width:370px) {
+  #topBar a{
+   margin-inline: 5px;
+  }
+
+  #topBar .topBarCenter{
+    display: flex;
+   flex-wrap: nowrap;
+ 
+  }
+
+  #topBar .profile_info .username{
+    display: none;
+  }
+}

@@ -2,7 +2,23 @@
     margin: auto;
     max-width: 500px;
     height: 100vh;
-    background-color: white;
+    background-color: var(--Secondary-color);
     padding: 10px;
     border-radius: 5px;
    }
+
+.empty_follow_list{
+ width: 90%;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+}
+
+.empty_follow_list .MuiSvgIcon-root{
+ font-size: 150px;
+}

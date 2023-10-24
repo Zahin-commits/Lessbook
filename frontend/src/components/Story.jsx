@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import img1 from '../assets/kr$na2.jpg';
 import axios from 'axios';
 import { StoryViewer } from './StoryViewer';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-const profilePic = 'https://starsunfolded.com/wp-content/uploads/2023/06/Puneet-Superstar-image.jpg';
- 
+
 export const Story = ({story}) => {
 const [authorInfo,setAuthorInfo] = useState([]);
 const [showStory,setShowStory] = useState(false); 
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`http://localhost:3000/user/${story.userId}`,{withCredentials: true});
+      const res = await axios.get(`https://lessbook-api.onrender.com/user/${story.userId}`,{withCredentials: true});
+      // const res = await axios.get(`http://localhost:3000/user/${story.userId}`,{withCredentials: true});
       setAuthorInfo(res.data.user);
     //  console.log(res.data.user)
     };

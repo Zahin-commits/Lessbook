@@ -49,7 +49,7 @@ const followerHandler = ()=>{
             <h2 className='username'>{data?.user?.username}</h2>
             <div className='follow_info'>
             <Link to={`/profile/${data?.user?._id}/followers`}><p>followers: {isLoading? "loading...": followerCount || data?.user?.followers.length}</p></Link> 
-            <Link to={`/profile/${data?.user?._id}/followings`}><p>following: {data?.user?.followings.length}</p></Link>
+            <Link to={`/profile/${data?.user?._id}/followings`}><p>followings: {data?.user?.followings.length}</p></Link>
             </div>
           </div>
         <button onClick={followerHandler} className='follow_btn'>

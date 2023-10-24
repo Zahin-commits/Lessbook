@@ -3,6 +3,7 @@ import { Following } from '../following/Following';
 import {useParams} from 'react-router-dom';
 import { useGetAuthorDataQuery, useGetUserDataQuery } from '../../features/user/userApiSlice';
 import { useSelector } from 'react-redux';
+import PersonOffIcon from '@mui/icons-material/PersonOff';
 
 export const ShowFollowings = () => {
   const {id} = useParams();
@@ -13,7 +14,11 @@ export const ShowFollowings = () => {
   <div>
 
     {isLoading?'loading...':<div id='showFollowings'>
-    {data?.user?.followings?.length === 0 && <p>This user has no followers yet</p>}
+    {data?.user?.followings?.length === 0 &&  <div className='empty_follow_list'>
+        <PersonOffIcon/>
+        <p>{currentUser?.user?.username || "this user"} dose not follow anyone yet</p>
+        </div>}
+
         {data?.user?.followings?.map(following=>(
          <Following userId={following} currentUser={currentUser?.user}/>
         ))}

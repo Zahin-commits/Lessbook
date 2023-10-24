@@ -215,6 +215,16 @@
     font-size: 23px;
     margin-bottom: 35px;
   }
+
+ #login .section_2 .content,
+ #register .section_2 .content{
+   width: 93vw;
+  }
+
+ #login .section_2 input,
+ #register .section_2 input{
+   width: 87vw;
+  }
  }
 
  ::-webkit-scrollbar {
