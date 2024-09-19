@@ -225,6 +225,23 @@
  #register .section_2 input{
    width: 87vw;
   }
+
+   .commentBox .add_comment .comment_input{
+    width: 80%;
+    font-size: 16px;
+    padding: 8px 10px;
+    border-radius: 16px;
+    margin: 5px;
+   }
+
+  .add_comment {
+    display: flex;
+  }
+
+  .comment_btn{
+   align-self: center;
+    margin-right: 3px;
+  }
  }
 
  ::-webkit-scrollbar {

@@ -31,7 +31,8 @@
 }
 
 .add_comment{
- border: 1px solid rgb(214, 214, 214);
+ /* border: 1px solid rgb(214, 214, 214); */
+ border: 1px solid var(--Secondary-color);
  border-radius: 10px;
  margin-block: 10px;
 }
@@ -39,7 +40,8 @@
 .add_comment .comment_input{
  width: 80%;
  border: none;
- background-color: #eee;
+ color: var(--text-color);
+ background-color: var(--input-bg);
  font-size: 18px;
  padding: 10px 15px;
  border-radius: 20px;

@@ -28,6 +28,8 @@ export default function Register() {
 useEffect(() => {
   if(userInfo){
     navigate('/');
+    //test
+    // console.log('chill');
    }
  },[navigate,userInfo])
 
@@ -36,12 +38,15 @@ useEffect(() => {
    const img = inputRef.current.files[0];
    setProfilePic(img);
    setPreviewPic(URL.createObjectURL(img));
-   console.log(img);
+  //  console.log(img);
  }
 
 
  const fireMedia = ()=>{
-  if(profilePic === null) return ;
+  if(profilePic == ''){
+    uploadToDB('/unknown.jpg');
+    return ;
+  } ;
 
    const meidaRef = ref(storage, `/profile/profile-picture/${profilePic + v4()}`);
    const uploadTask = uploadBytesResumable(meidaRef,profilePic);
@@ -83,7 +88,8 @@ useEffect(() => {
     dispatch(setCredentials({...res})); 
 
     if(res.sucess){
-      navigate('/');
+      //test
+     navigate('/');
     }
   } catch (error) {
     //console.log(error?.data?.message || error.error)
@@ -99,6 +105,8 @@ useEffect(() => {
 const registerHandler = async(e)=>{
   e.preventDefault();
   fireMedia()
+  //test
+  // console.log(profilePic);
  /*  try {
     const res = await register({username,email,password}).unwrap();
    
@@ -163,3 +171,7 @@ const registerHandler = async(e)=>{
  });
  console.log('register res',res);
  dispatch(setCredentials({...res})); */
+
+ //https://firebasestorage.googleapis.com/v0/b/lessbook-ffccf.appspot.com/o/profile%2Fprofile-picture%2Ff43050c8-f28b-4814-87a3-508a92fb3fed?alt=media&token=fbd7c756-74f4-4c7d-bfa7-4f7c959f1b75
+
+ //https://firebasestorage.googleapis.com/v0/b/lessbook-ffccf.appspot.com/o/profile%2Fprofile-picture%2Fca30c552-07f4-49c4-b686-ffcd4890c981?alt=media&token=a48b9561-55bd-4ec0-81c6-98818202d39a
