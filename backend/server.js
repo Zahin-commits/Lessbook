@@ -21,7 +21,8 @@ app.use(express.urlencoded({extended:true}));
 
 app.use(cors({
     credentials: true,
-    origin:"https://lessbook-ju9z.vercel.app"
+    // origin:"https://lessbook-ju9z.vercel.app"
+    origin:"https://lessbook.vercel.app"
     // origin:"http://localhost:5173"
 }
 ));
