@@ -39,7 +39,9 @@ exports.getFollowingStories =async(req,res)=>{
  
  const stories = userStory? [userStory,...followingsStories] : [...followingsStories];
  //console.log(stories);
-    res.status(201).json({sucess:true,stories});
+    res.status(200).json({sucess:true,stories});
+   //  console.log("this is stories route")
+   //  res.status(200).json({sucess:true,test:'you hit story route with get request'});
 } catch (error) {
     res.status(500).json({sucess:false, message:error.message});
 }

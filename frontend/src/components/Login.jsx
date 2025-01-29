@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import {useDispatch,useSelector} from 'react-redux';
 import { setCredentials } from '../app/authSlice';
 import { useLoginMutation } from '../features/user/userApiSlice';
+import LoadingSvg from './LoadingSvg';
 
 export default function Login() {
   const [email,setEmail] = useState('');
@@ -54,7 +55,7 @@ export default function Login() {
         <input type="email" placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/>
         <input type="text" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
 
-      <button type="submit">{isLoading ? "Loading..." : "Log in"}</button>
+      <button type="submit">{isLoading ? <div className='loader_wraper'><LoadingSvg color='#ffff'/></div> : "Log in"}</button>
         </form>
         <Link to={'/register'}>don't have an account?</Link>
     </div>

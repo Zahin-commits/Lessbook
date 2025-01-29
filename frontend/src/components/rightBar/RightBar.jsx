@@ -8,9 +8,9 @@ export const RightBar = ({username}) => {
   return (
     <div id='rightBar'>
         <h2>Followings</h2>
-        {isLoading?'loading...':<div className='following-list'>
-        {data?.user?.followings?.map(following=>(
-         <Following userId={following} currentUser={'rightBar'}/>
+        {isLoading?<div className=''></div>:<div className='following-list'>
+        {data?.user?.followings?.map((following,index)=>(
+         <Following key={index} userId={following} currentUser={'rightBar'}/>
         ))}
     </div>}
     </div>

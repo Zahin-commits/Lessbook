@@ -1,6 +1,5 @@
 import './post.css';
-import axios from 'axios';
-import { useGetAuthorDataQuery, useGetAuthorInfoMutation, useLikePostMutation } from '../../features/user/userApiSlice';
+import { useGetAuthorDataQuery, useLikePostMutation } from '../../features/user/userApiSlice';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -34,36 +33,32 @@ export const Post = ({post}) => {
   })
 };
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const res = await axios.get(`https://lessbook-api.onrender.com/user/${post.userId}`,{withCredentials: true});
-      // const res = await axios.get(`http://localhost:3000/user/${post.userId}`,{withCredentials: true});
-      setAuthorInfo(res.data.user);
-   //   console.log(res.data.user)
-    };
-    fetchUser();
-  }, [post.userId]);
- /*  const [getAuthorInfo,{isLoading}] = useGetAuthorInfoMutation();
- 
-  if(post.userId){
-     const userId = post.userId;
-    
-      const res = getAuthorInfo(userId).unwrap().then((data,error)=>{
-        if(data){
-         setAuthorInfo(data); 
-        }
-      }); 
+  
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     // const res = await axios.get(`https://lessbook-api.onrender.com/user/${post.userId}`,{withCredentials: true});
+  //     const res = await axios.get(`http://localhost:3000/user/${post.userId}`,{withCredentials: true});
+      
+  //     setAuthorInfo(res.data.user);
+      
 
-  //const {data,isLoading} = useGetAuthorDataQuery(userId);
-}*/
+  //   };
+  //   fetchUser();
+  // }, [post.userId]);
+
+  const {data,error,isLoading:isAuthorLoading} = useGetAuthorDataQuery(post.userId);
+  
+ 
   return (
     <div className='post'>
     <div className="post-info">
 
-      <Link to={`/profile/${post.userId}`}> <img src={aothorInfo.profilePic || './unknown.jpg'} alt="" className="prfile-pic" /></Link>
+      {/* <Link to={`/profile/${post.userId}`}> <img src={aothorInfo.profilePic || './unknown.jpg'} alt="" className="prfile-pic" /></Link> */}
+      <Link to={`/profile/${post.userId}`}> <img src={data?.user?.profilePic || './unknown.jpg'} alt="" className="prfile-pic" /></Link>
        
        <div className='author'>
-        <Link  to={`/profile/${post.userId}`}><p className='author-name'>{aothorInfo?.username || 'Loading'} </p></Link> 
+        {/* <Link  to={`/profile/${post.userId}`}><p className='author-name'>{aothorInfo?.username || 'Loading'} </p></Link>  */}
+        <Link  to={`/profile/${post.userId}`}><p className='author-name'>{data?.user?.username || ' '} </p></Link> 
      
        <span className="createAt">{new Date(post.createdAt).toLocaleDateString()}</span> 
         </div> 
@@ -83,7 +78,7 @@ export const Post = ({post}) => {
   <div className="post_engagement">
     <button className="like" onClick={likeHandler} disabled={isLoading}>
      {post?.likes?.includes(userInfo._id)? <ThumbUpAltIcon style={{color:'#2580FF'}} /> : <ThumbUpAltIcon/>}
-      </button> {isLoading? 'Loading...':post?.likes?.length}
+      </button> {isLoading? ' ':post?.likes?.length}
     <div className="comment-container" onClick={()=>setShowComments(!showComments)}><ChatBubbleIcon/></div> 
   </div>
    {showComments && <CommnetBox postId={post._id}/>}  

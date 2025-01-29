@@ -6,6 +6,7 @@ import { setCredentials } from '../app/authSlice';
 import { storage } from '../firebase';
 import {ref,uploadBytesResumable,getDownloadURL} from 'firebase/storage';
 import { v4 } from 'uuid';
+import LoadingSvg from './LoadingSvg';
 
 export default function Register() {
   const [profilePic,setProfilePic] = useState('');
@@ -153,7 +154,9 @@ const registerHandler = async(e)=>{
   <input type="email" placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/>
   <input type="text" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
 
-  <button type="submit">{isLoading || showProgress? "Loading..." : "sign up"}</button>
+  <button type="submit">
+      {isLoading || showProgress? <div className='loader_wraper'><LoadingSvg color='#ffff'/></div>  : "sign up"}
+    </button>
 </form>
 
 <Link to={'/login'}>already have account</Link>

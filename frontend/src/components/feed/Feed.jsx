@@ -5,6 +5,7 @@ import PostMaker from '../postMaker/PostMaker';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../../app/authSlice';
 import { useDispatch } from 'react-redux';
+import LoadingSvg from '../LoadingSvg';
 
 export const Feed = ({userId}) => {
   const navigate = useNavigate();
@@ -41,7 +42,9 @@ if(error){
    {!userId &&<PostMaker/>}
    
 
-    {isLoading && <span className='loader_wraper'><span className='loader'></span></span>}
+    {isLoading && <span className='loader_wraper'>
+      {/* <span className='loader'></span> */}
+       <LoadingSvg/> </span>}
       
       {/* {posts && posts?.post?.map((item,index)=>(
       <Post key={index} post={item} /> 

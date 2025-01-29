@@ -9,6 +9,9 @@ import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied
  
 export const StoryContainer = () => {
 const {scrollLeft,scrollRight} = useScroll('#story_container');
+
+
+
 const {data,isLoading} = useGetAllStoryQuery();
 
  console.log('stories', data);
