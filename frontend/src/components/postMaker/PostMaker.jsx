@@ -131,7 +131,8 @@ const fireMedia = ()=>{
       </div>
        <button type="submit" disabled={showProgress || isLoading}>
         
-          {isLoading ? <span>Loading</span> : showProgress? <span>Uploading</span>:<span>Post <SendIcon/></span>}
+          {/* {isLoading ? <span>Loading</span> : showProgress? <span>Uploading</span>:<span>Post <SendIcon/></span>} */}
+          {isLoading || showProgress?<div className='loader_wraper'><LoadingSvg color='#ffff'/></div>:<span>Post <SendIcon/></span>}
        
         </button>
        </form>

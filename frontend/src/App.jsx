@@ -3,14 +3,13 @@ import { BrowserRouter as Router,Routes, Route, Outlet} from 'react-router-dom';
 import Register from './components/Register';
 import Login from './components/Login';
 import {ProtectedRoute} from './components/ProtectedRoute'
-import Test from './components/Test';
 import { HomeScreen } from './screens/HomeScreen';
-import { Profile } from './components/Profile';
 import { EditProfile } from './components/EditProfile/EditProfile';
 import { ShowFollowings } from './components/showFollowngs/ShowFollowings';
 import { ShowFolloers } from './components/showFollowers/ShowFolloers';
 import { ShowFeed } from './components/showFeed/ShowFeed';
 import { NotFound } from './screens/NotFound';
+import { Profile } from './components/profile/Profile';
 
 function App() {
 

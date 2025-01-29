@@ -1,8 +1,8 @@
 import './storyContainer.css';
 import { Story } from './Story';
 import { StoryMaker } from './StoryMaker';
-import { useGetAllStoryQuery } from '../features/user/userApiSlice';
-import useScroll from '../useScroll';
+import { useGetAllStoryQuery } from '../../features/user/userApiSlice';
+import useScroll from '../../useScroll';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied';
@@ -14,7 +14,7 @@ const {scrollLeft,scrollRight} = useScroll('#story_container');
 
 const {data,isLoading} = useGetAllStoryQuery();
 
- console.log('stories', data);
+//  console.log('stories', data);
 
   return (
     <div id="story_container_wraper">

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import {storage} from '../firebase'; 
+import {storage} from '../../firebase'; 
 import {ref,uploadBytesResumable,getDownloadURL} from 'firebase/storage';
-import { useCreateStoryMutation } from '../features/user/userApiSlice';
+import { useCreateStoryMutation } from '../../features/user/userApiSlice';
 import {v4} from 'uuid';
 
 export const StoryMaker = () => {

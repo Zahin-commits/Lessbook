@@ -1,7 +1,7 @@
 import './profile.css'
 import {useParams,Link} from 'react-router-dom';
-import { useFollowUserMutation, useGetAuthorDataQuery } from '../features/user/userApiSlice';
-import { Feed } from './feed/Feed';
+import { useFollowUserMutation, useGetAuthorDataQuery } from '../../features/user/userApiSlice';
+import { Feed } from '../feed/Feed';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
@@ -10,14 +10,14 @@ export const Profile = () => {
   //const dispatch = useDispatch(); im not sure that if i should 
   //update the following list of the localay stored user data or not 
   const {userInfo} = useSelector(state=>state.auth);
-  console.log(userInfo)
+  // console.log(userInfo)
   const {data,isLoading} = useGetAuthorDataQuery(id);
- //console.log(data);
+ console.log(data);
   
  const [followerCount,setFollowCount] = useState(null);
  const [isFollowing,setIsfollowing] = useState(false); 
 
-  console.log('followers from data',data?.user?.followings.length);
+  // console.log('followers from data',data?.user?.followings.length);
 
  const [followUser,{isLoading:followUserIsloading}] = useFollowUserMutation();
 

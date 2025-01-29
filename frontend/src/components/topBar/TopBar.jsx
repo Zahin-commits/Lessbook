@@ -2,16 +2,16 @@ import './topbar.css';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { logout } from '../app/authSlice';
+import { logout } from '../../app/authSlice';
 import MenuIcon from '@mui/icons-material/Menu';
-import ThemeSwitch from './ThemeSwitch';
+import ThemeSwitch from '../ThemeSwitch';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import GroupRoundedIcon from '@mui/icons-material/GroupRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import useHamburger from '../useHamburger';
-import { SearchUsers } from './SearchUsers/SearchUsers';
+import useHamburger from '../../useHamburger';
+import { SearchUsers } from '../SearchUsers/SearchUsers';
 
 export const TopBar = () => {
     const [showDropdown,setShowDropdown] = useState(false);

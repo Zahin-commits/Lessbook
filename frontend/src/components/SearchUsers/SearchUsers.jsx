@@ -35,7 +35,7 @@ export const SearchUsers = ({setShowSearch,showSearch}) => {
      <div className='search_result'>
       {isLoading && <p>Loading...</p>} 
        {!isLoading && users?.map(user=>(
-        <Link to={`/profile/${user?._id}`}>
+        <Link key={user?._id} to={`/profile/${user?._id}`}>
          <div className='user' key={user?._id}>
             
           <img src={user?.profilePic || './unknown.jpg'} alt="db" width={45}/>

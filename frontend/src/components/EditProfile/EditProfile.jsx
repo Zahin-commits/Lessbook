@@ -138,9 +138,9 @@ export const EditProfile = () => {
     <div id='edit_profile'>
       <div className='section_1'>
         <img src={ previewCoverPic || data?.user?.coverPicture || loadingCover}
-          onClick={handleProfileCoverInput}
+         
          alt="cover pic" className='cover_pic'/>
-         <div className='edit_btn edit_cover'>
+         <div className='edit_btn edit_cover'  onClick={handleProfileCoverInput}>
           <EditRoundedIcon/>
           <p className='btn_text'>Change Cover</p>
          </div>
@@ -151,13 +151,17 @@ export const EditProfile = () => {
       </div>
 
       <div className='section_2'>
-       <img src={ previewProfilePic || data?.user?.profilePic || loaidngAvatar}
-        alt="profile pic" className='profile_pic' onClick={handleProfilePicInput} />
 
-        <div className='edit_btn .edit_profile'>
+        <div className='dp_wraper'>
+          <img src={ previewProfilePic || data?.user?.profilePic || loaidngAvatar}
+        alt="profile pic" className='profile_pic' />
+
+        <div className='edit_btn .edit_profile' onClick={handleProfilePicInput}>
           <EditRoundedIcon/>
-          <p className='btn_text'>Change Cover</p>
+          <p className='btn_text'>Change DP</p>
          </div>
+        </div>
+       
 
        <input type="file" ref={profilePicInputRef} accept='image/*'
         onChange={(e)=>chooseProfilePic(e)} hidden

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { StoryViewer } from './StoryViewer';
-import { useGetAuthorDataQuery } from '../features/user/userApiSlice';
+import { useGetAuthorDataQuery } from '../../features/user/userApiSlice';
 
 export const Story = ({story}) => {
 // const [authorInfo,setAuthorInfo] = useState([]);
 const [showStory,setShowStory] = useState(false); 
 
 const {data,error,isLoading:isAuthorLoading} = useGetAuthorDataQuery(story.userId);
- console.log(data);
+//  console.log(data);
 
   // useEffect(() => {
   //   const fetchUser = async () => {

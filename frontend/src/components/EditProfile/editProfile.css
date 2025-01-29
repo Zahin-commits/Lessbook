@@ -50,12 +50,17 @@
 .section_2 .edit_btn .MuiSvgIcon-root{
  font-size: 30px;
 }
+
+.section_2 .dp_wraper{
+    position: relative;
+}
+
 .section_2 .edit_btn{
     height: 192px;
     width: 190px;
     margin: auto;
     border-radius: 50%;
-    top: 36%;
+    /* top: 36%; */
 }
 
 .section_1 .cover_pic{
@@ -65,7 +70,7 @@
 
 #edit_profile .section_2 {
  position: absolute;
- top: 55%;
+ top: 50%;
  left: 50%;
  transform: translate(-50%,-50%);
  margin: auto;

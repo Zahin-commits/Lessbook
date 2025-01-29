@@ -1,3 +1,4 @@
+const Comment = require("../model/Comment");
 const Post = require("../model/Post");
 
 
@@ -34,7 +35,7 @@ exports.getAllPost = async(req,res)=>{
       post = await Post.find({userId}).sort('-createdAt');
     }else{
      post = await Post.find().sort('-createdAt');
- }
+ }  
     res.json({sucess:true, post});
   } catch (error) {
     res.status(500).json({sucess:false, message:error.message});
