@@ -9,7 +9,7 @@ import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 
 export const Post = ({post}) => {
   //const {username} = useParams()
-  console.log('post', post)
+  // console.log('post', post)
   const {userInfo} = useSelector(state=>state.auth);
 
   const [aothorInfo,setAuthorInfo] = useState('');
