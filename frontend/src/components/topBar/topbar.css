@@ -64,6 +64,7 @@
  height: 50px;
  border-radius: 50%;
  object-fit: cover;
+ margin-right: 7px;
 }
 
 .dropdown{
@@ -180,6 +181,7 @@
  .topBarLeft .userPic {
   width: 40px;
   height: 40px;
+  margin-right: 0px;
 }
 }
 

@@ -8,6 +8,7 @@ import {v4} from 'uuid';
 import SendIcon from '@mui/icons-material/Send';
 import ImageIcon from '@mui/icons-material/Image';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
+import LoadingSvg from '../LoadingSvg';
 
 export default function PostMaker() {
   const [text,setText] = useState('');

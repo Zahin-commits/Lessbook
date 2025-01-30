@@ -50,7 +50,7 @@ export const TopBar = () => {
         <div className='topBarLeft'>
         <ThemeSwitch/>
          <div className='profile_info' onClick={()=>setShowDropdown(!showDropdown)}>
-          <img className='userPic' src={userInfo.profilePic} alt="" />
+          <img className='userPic' src={userInfo?.profilePic || './unknown.jpg'} alt="" />
           <p className='username'>{userInfo.username}</p>
          </div>
             
