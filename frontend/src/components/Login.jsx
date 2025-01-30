@@ -44,8 +44,8 @@ export default function Login() {
     <div className="section_1">
         <div className="text_box">
         <h1>Lessbook</h1>
-    <p>Lessbook helps you disconnect and fight <br/>
-       with the people in your life.</p>   
+        <p>Lessbook helps you connect and share<br/>
+        with the people in your life.</p>     
         </div>
     </div>
 
